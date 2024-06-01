@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="flex justify-center items-center min-h-screen">
+  <div class="flex justify-center items-center">
     <header>
       <div class="w-[397px] h-[422px] relative">
         <div class="w-full h-[422px] absolute left-[-11.5px] top-[-11.5px] rounded-[25px]"></div>
@@ -50,8 +50,8 @@
             >L'objectif principal de </span
           ><span class="w-[331px] h-[81px] text-[13px] text-left text-[#fee47c]">STUD’ECO</span
           ><span class="w-[331px] h-[81px] text-[13px] text-left text-white">
-            est de devenir une ressource centralisée où les étudiants peuvent accéder à l'ensemble des
-            opportunités offertes par leur carte étudiante ou lycéen.
+            est de devenir une ressource centralisée où les étudiants peuvent accéder à l'ensemble
+            des opportunités offertes par leur carte étudiante ou lycéen.
           </span>
         </p>
         <img
@@ -62,11 +62,6 @@
           class="w-[30px] h-[30px] absolute left-[269.5px] top-[19.5px] object-contain"
         />
       </div>
-      <RouterView v-slot="{ Component }">
-        <Suspense>
-          <component :is="Component" />
-        </Suspense>
-      </RouterView>
     </header>
   </div>
 </template>
