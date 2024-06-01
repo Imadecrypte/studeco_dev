@@ -3,7 +3,6 @@
 </script>
 
 <template>
-  <h1 class="text-2xl">Test</h1>
   <div class="w-[397px] h-[422px]">
     <div class="w-full h-[422px] absolute left-[-11.5px] top-[-11.5px] rounded-[25px]"></div>
     <div

@@ -4,20 +4,11 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-    <header>
-        <nav>
-        <ul>
-            <li>
-            <RouterLink to="/" class="text-red-500 underline"> Accueil </RouterLink>
-            </li>
-        </ul>
-        </nav>
-    </header>
-    <HeaderPage />
+  <header>
     <RouterView v-slot="{ Component }">
-        <Suspense>
+      <Suspense>
         <component :is="Component" />
-        </Suspense>
+      </Suspense>
     </RouterView>
-    <FooterPage />
+  </header>
 </template>
