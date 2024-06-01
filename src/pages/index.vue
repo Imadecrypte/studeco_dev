@@ -6,7 +6,7 @@
   <div class="w-full max-w-[345px] h-[172px] mx-auto mt-[20px] relative">
     <div class="w-full h-full rounded-[25px] bg-[#5e90d2]"></div>
     <div class="w-[95px] h-[22px] absolute left-[16px] top-[144px] rounded-[25px] bg-white"></div>
-    <div class="absolute left-9 top-[146px]">
+    <div class="absolute left-5 top-[146px]">
       <p class="text-[13px] text-left text-black">Voir la carte</p>
     </div>
     <p class="absolute left-[85px] top-[12px] text-base text-left uppercase text-[#abd3ff]">
@@ -23,19 +23,19 @@
     />
     <img
       src="/map.webp"
-      class="w-[190px] h-[169px] absolute left-[calc(50%+10px)] top-[20px] object-cover"
+      class="w-[190px] h-[169px] absolute left-[calc(50%+15px)] top-[20px] object-cover"
     />
   </div>
 
   <div class="w-full max-w-[345px] h-[172px] mx-auto mt-[20px] relative">
     <div class="w-full h-full rounded-[25px] bg-[#ce7891]"></div>
     <div class="w-[95px] h-[22px] absolute left-[16px] top-[144px] rounded-[25px] bg-white"></div>
-    <div class="absolute left-9 top-[146px]">
+    <div class="absolute left-5 top-[146px]">
       <p class="text-[13px] text-left text-black">Voir la liste</p>
     </div>
     <img
       src="/note.webp"
-      class="w-[190px] h-[169px] absolute left-[calc(50%+10px)] top-[20px] object-cover"
+      class="w-[190px] h-[169px] absolute left-[calc(50%+2px)] top-[20px] object-cover"
     />
     <img
       src="/Back Arrow(1).svg"
@@ -53,7 +53,7 @@
   <div class="w-full max-w-[345px] h-[172px] mx-auto mt-[20px] relative">
     <div class="w-full h-full rounded-[25px] bg-[#32a761]"></div>
     <div class="w-[95px] h-[22px] absolute left-[16px] top-[144px] rounded-[25px] bg-white"></div>
-    <div class="absolute left-[34px] top-[146px]">
+    <div class="absolute left-[20px] top-[149px]">
       <p class="text-xs text-left text-black">Voir les offres</p>
     </div>
     <p class="absolute left-24 top-[14px] text-base text-left uppercase text-[#82ffb4]">
@@ -65,7 +65,7 @@
     />
     <img
       src="/ecran.webp"
-      class="w-[155px] h-[155px] absolute left-[calc(50%+30px)] top-[20px] object-cover"
+      class="w-[155px] h-[155px] absolute left-[calc(50%+30px)] top-[30px] object-cover"
     />
     <p class="absolute left-9 top-[56px] text-[10px] text-left text-white w-[180px] h-[65px]">
       Voici un catalogue des différentes offres disponibles UNIQUEMENT sur Internet. Ce qui vous
@@ -76,7 +76,7 @@
   <div class="w-full max-w-[345px] h-[172px] mx-auto mt-[20px] relative">
     <div class="w-full h-full rounded-[25px] bg-[#d3aa1a]"></div>
     <div class="w-[95px] h-[22px] absolute left-[16px] top-[144px] rounded-[25px] bg-white"></div>
-    <div class="absolute left-[37px] top-[146px]">
+    <div class="absolute left-[20px] top-[149px]">
       <p class="text-xs text-left text-black">Voir le TOP</p>
     </div>
     <p class="absolute left-[163px] top-[12px] text-base text-left uppercase text-[#fff3bd]">
