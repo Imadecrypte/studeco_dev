@@ -19,7 +19,7 @@
     </p>
     <img
       src="/Back Arrow.svg"
-      class="w-[17px] h-[17px] absolute left-[107px] top-[148px] object-contain"
+      class="w-[17px] h-[17px] absolute left-[90px] top-[148px] object-contain"
     />
     <img
       src="/map.webp"
@@ -39,7 +39,7 @@
     />
     <img
       src="/Back Arrow(1).svg"
-      class="w-[17px] h-[17px] absolute left-[105px] top-[148px] object-contain"
+      class="w-[17px] h-[17px] absolute left-[90px] top-[147px] object-contain"
     />
     <p class="absolute left-[114px] top-[12px] text-base text-left uppercase text-[#ffbfd2]">
       La Liste des Offres
@@ -61,7 +61,7 @@
     </p>
     <img
       src="/Back Arrow(2).svg"
-      class="w-[17px] h-[17px] absolute left-[107px] top-[148px] object-contain"
+      class="w-[17px] h-[17px] absolute left-[93px] top-[148px] object-contain"
     />
     <img
       src="/ecran.webp"
@@ -92,7 +92,7 @@
     />
     <img
       src="/Back Arrow(3).svg"
-      class="w-[17px] h-[17px] absolute left-[103px] top-[148px] object-contain"
+      class="w-[17px] h-[17px] absolute left-[90px] top-[148px] object-contain"
     />
   </div>
 </template>
