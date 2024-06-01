@@ -12,7 +12,7 @@
     <p class="absolute left-[85px] top-[12px] text-base text-left uppercase text-[#abd3ff]">
       La Carte de Localisation
     </p>
-    <p class="absolute left-8 top-[56px] text-[10px] text-left text-white w-[190px] h-[72px]">
+    <p class="absolute left-8 top-[48px] text-[10px] text-left text-white w-[190px] h-[72px]">
       Notre site internet intègre une fonctionnalité de carte de géolocalisation interactive, vous
       permettant de découvrir facilement les emplacements physiques des points d'intérêt, des
       magasins ou des événements près de chez vous.
