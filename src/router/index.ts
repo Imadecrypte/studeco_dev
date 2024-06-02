@@ -6,13 +6,15 @@ const routes = [
   {
     path: '/menu',
     name: 'Menu',
-    component: Menu
+    component: Menu,
+    meta: { header: 'special' }
   },
   {
     path: '/home',
     name: 'Home',
-    component: Home
-  },
+    component: Home,
+    meta: { header: 'default' }
+  }
 ]
 
 const router = createRouter({
