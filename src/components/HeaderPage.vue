@@ -22,7 +22,7 @@
           src="/Studeco_2 5.webp"
           class="w-[168px] h-[173px] absolute left-[115px] top-[108.5px] object-cover"
         />
-        <router-link to="/menu.vue">
+        <router-link to="/menu">
           <div class="w-[43px] h-[22px] absolute left-[320px] top-[20px] cursor-pointer">
             <div class="w-[33px] h-[3.5px] rounded-[25px] bg-white my-1"></div>
             <div class="w-[21px] h-1 rounded-[25px] bg-white my-1"></div>

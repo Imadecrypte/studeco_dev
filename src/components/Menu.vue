@@ -87,13 +87,13 @@
     class="w-[169px] h-[38px] absolute left-[102px] top-[741px] rounded-[15px] bg-[#848484]"
   ></div>
   <img
-    src="logo-instagram-png-blanc-2.png"
+    src="/logo_insta.svg"
     class="w-[35px] h-[35px] absolute left-[119px] top-[742px] object-cover"
   /><img
-    src="twitter-x-white-logo-png-2.png"
+    src="/logo_x.svg"
     class="w-8 h-7 absolute left-[169px] top-[746px] object-cover"
   /><img
-    src="pngitem_5119843-1.png"
+    src="/logo_message.svg"
     class="w-9 h-7 absolute left-[216px] top-[746px] object-cover"
   />
   <div class="w-[134px] h-[47px]">
@@ -129,7 +129,7 @@
       Inscription
     </p>
   </div>
-  <img src="studeco_2-4.png" class="w-[47px] h-[51px] absolute left-[9px] top-1.5 object-cover" />
+  <img src="/Studeco_2 4.webp" class="w-[47px] h-[51px] absolute left-[9px] top-1.5 object-cover" />
 </div>
 
 

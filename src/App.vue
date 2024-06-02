@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onErrorCaptured } from 'vue'
-import { RouterView } from 'vue-router/auto'
 import HeaderPage from './components/HeaderPage.vue'
 import FooterPage from './components/FooterPage.vue'
 
@@ -13,7 +12,7 @@ onErrorCaptured((err, instance, info) => {
 <template>
   <HeaderPage />
   <main>
-    <RouterView />
+    <router-view />
   </main>
   <FooterPage />
 </template>
