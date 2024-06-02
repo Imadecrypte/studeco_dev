@@ -3,7 +3,7 @@
 <template>
   <div class="flex justify-center items-center">
     <header>
-      <div class="w-[397px] h-[422px] relative">
+      <div class="w-[400px] h-[422px] relative">
         <div class="w-full h-[422px] absolute left-[-11.5px] top-[-11.5px] rounded-[25px]"></div>
         <div
           class="w-full h-[411px] absolute left-[-0.5px] top-[-0.5px]"
@@ -20,7 +20,7 @@
         ></div>
         <img
           src="/Studeco_2 5.webp"
-          class="w-[168px] h-[173px] absolute left-[103.5px] top-[108.5px] object-cover"
+          class="w-[168px] h-[173px] absolute left-[115px] top-[108.5px] object-cover"
         />
         <div class="w-[43px] h-[22px]">
           <div
