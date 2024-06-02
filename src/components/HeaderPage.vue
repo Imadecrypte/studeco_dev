@@ -22,17 +22,13 @@
           src="/Studeco_2 5.webp"
           class="w-[168px] h-[173px] absolute left-[115px] top-[108.5px] object-cover"
         />
-        <div class="w-[43px] h-[22px]">
-          <div
-            class="w-[33px] h-1 absolute left-[326.5px] top-[23.5px] rounded-[25px] bg-white"
-          ></div>
-          <div
-            class="w-[21px] h-1 absolute left-[338.5px] top-[41.5px] rounded-[25px] bg-white"
-          ></div>
-          <div
-            class="w-[43px] h-1 absolute left-[316.5px] top-[32.5px] rounded-[25px] bg-white"
-          ></div>
-        </div>
+        <router-link to="/menu.vue">
+          <div class="w-[43px] h-[22px] absolute left-[320px] top-[20px] cursor-pointer">
+            <div class="w-[33px] h-[3.5px] rounded-[25px] bg-white my-1"></div>
+            <div class="w-[21px] h-1 rounded-[25px] bg-white my-1"></div>
+            <div class="w-[43px] h-1 rounded-[25px] bg-white my-1"></div>
+          </div>
+        </router-link>
         <p class="w-[70px] h-[19px] absolute left-[11px] top-[73px] text-sm text-left text-white">
           LA CARTE
         </p>
