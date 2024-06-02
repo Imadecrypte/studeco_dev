@@ -10,7 +10,7 @@ const routes = [
     meta: { header: 'special' }
   },
   {
-    path: '/home',
+    path: '/',
     name: 'Home',
     component: Home,
     meta: { header: 'default' }

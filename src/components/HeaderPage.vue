@@ -50,7 +50,7 @@
             des opportunités offertes par leur carte étudiante ou lycéen.
           </span>
         </p>
-        <router-link to="/home">
+        <router-link to="/">
           <img
             src="/Studeco_2 4.webp"
             class="w-[47px] h-[51px] absolute left-[9.5px] top-[6.5px] object-cover"

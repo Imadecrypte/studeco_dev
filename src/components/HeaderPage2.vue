@@ -23,7 +23,7 @@
           <div class="w-[43px] h-1 rounded-[25px] bg-white my-1"></div>
         </div>
       </router-link>
-      <router-link to="/home">
+      <router-link to="/">
         <img
           src="/Studeco_2 5.webp"
           class="w-[47px] h-[51px] absolute left-[9.5px] top-[6.5px] object-cover"
