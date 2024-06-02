@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Menu from '../components/Menu.vue'
-import index from '../pages/index.vue'
+import Home from '../pages/index.vue'
 
 const routes = [
   {
@@ -9,10 +9,10 @@ const routes = [
     component: Menu
   },
   {
-    path: '/',
-    name: 'index',
-    component: index
-  }
+    path: '/home',
+    name: 'Home',
+    component: Home
+  },
 ]
 
 const router = createRouter({
