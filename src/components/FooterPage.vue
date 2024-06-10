@@ -1,5 +1,16 @@
 <script setup lang="ts"></script>
 
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.titleh1 {
+  font-family: 'Jost' , sans-serif;
+}
+
+</style>
+
 <template>
   <div class="w-full flex justify-center mt-6">
     <footer class="w-full">
@@ -28,11 +39,9 @@
         >
           <line y1="0.5" x2="375" y2="0.5" stroke="white"></line>
         </svg>
-        <p
-          class="w-[78px] h-[15px] absolute left-[170px] top-[24px] text-base text-left text-white"
-        >
-          CONTACT
-        </p>
+        <div class="absolute top-[24px] w-full flex justify-center">
+          <p class="text-base text-center text-white">CONTACT</p>
+        </div>
         <svg
           width="400"
           height="1"
@@ -44,11 +53,9 @@
         >
           <line y1="0.5" x2="375" y2="0.5" stroke="white"></line>
         </svg>
-        <p
-          class="w-[159px] h-[15px] absolute left-[130px] top-[144px] text-base text-left uppercase text-white"
-        >
-          mentions légales
-        </p>
+        <div class="absolute top-[85px] w-full flex justify-center">
+          <p class="text-base text-center uppercase text-white">à propos</p>
+        </div>
         <svg
           width="400"
           height="1"
@@ -60,11 +67,9 @@
         >
           <line y1="0.5" x2="375" y2="0.5" stroke="white"></line>
         </svg>
-        <p
-          class="w-[83px] h-[15px] absolute left-[170px] top-[85px] text-base text-left uppercase text-white"
-        >
-          à propos
-        </p>
+        <div class="absolute top-[144px] w-full flex justify-center">
+          <p class="text-base text-center uppercase text-white">mentions légales</p>
+        </div>
         <svg
           width="400"
           height="1"
@@ -76,18 +81,20 @@
         >
           <line y1="0.5" x2="375" y2="0.5" stroke="white"></line>
         </svg>
-        <img
-          src="/logo_insta.svg"
-          class="w-[23px] h-[23px] absolute left-[155px] top-[195px] object-cover"
-        />
-        <img
-          src="/logo_x.svg"
-          class="w-[21px] h-[19px] absolute left-[197px] top-[198px] object-cover"
-        />
-        <img
-          src="/logo_message.svg"
-          class="w-6 h-[19px] absolute left-[237px] top-[198px] object-cover"
-        />
+        <div class="absolute top-[195px] w-full flex justify-center space-x-6">
+          <img
+            src="/logo_insta.svg"
+            class="w-[23px] h-[23px] object-cover"
+          />
+          <img
+            src="/logo_x.svg"
+            class="w-[21px] h-[19px] object-cover"
+          />
+          <img
+            src="/logo_message.svg"
+            class="w-6 h-[19px] object-cover"
+          />
+        </div>
       </div>
     </footer>
   </div>
