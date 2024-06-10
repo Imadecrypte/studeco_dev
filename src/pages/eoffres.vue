@@ -103,8 +103,8 @@ body {
 
 .blue-circle {
   position: absolute;
-  top: 50px;
-  right: -25px;
+  top: 20px;
+  right: 25px;
   width: 50px;
   height: 50px;
   background-color: #85D0D9;

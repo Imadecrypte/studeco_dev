@@ -81,15 +81,6 @@ body {
   margin: 0;
 }
 
-.yellow-circle {
-  position: absolute;
-  top: 50px; 
-  right: -25px; 
-  width: 50px;
-  height: 50px;
-  background-color: #ffd700; 
-  border-radius: 50%;
-}
 </style>
 
 <template>
@@ -133,6 +124,5 @@ body {
         <p>ADMINISTRATIF</p>
       </router-link>
     </div>
-    <div class="yellow-circle"></div>
   </div>
 </template>
