@@ -10,7 +10,7 @@
       <p class="text-[13px] text-left text-black">Voir la carte</p>
     </div>
     <p class="absolute left-[85px] top-[12px] text-base text-left uppercase text-[#abd3ff]">
-      La Carte de pmaoejaej
+      La Carte de Localisation
     </p>
     <p class="absolute left-8 top-[48px] text-[10px] text-left text-white w-[190px] h-[72px]">
       Notre site internet intègre une fonctionnalité de carte de géolocalisation interactive, vous
