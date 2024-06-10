@@ -41,11 +41,11 @@
         <p class="w-[49px] h-[19px] absolute left-[316px] top-[73px] text-sm text-left text-white">
           LE TOP
         </p>
-        <p class="w-[331px] h-[81px] absolute left-[22px] top-[299px] text-[13px] text-left">
-          <span class="w-[331px] h-[81px] text-[13px] text-left text-white"
+        <p class="w-[400px] h-[81px] absolute left-[22px] top-[299px] text-[13px] text-left">
+          <span class="w-[400px] h-[81px] text-[13px] text-left text-white"
             >L'objectif principal de </span
-          ><span class="w-[331px] h-[81px] text-[13px] text-left text-[#fee47c]">STUD’ECO</span
-          ><span class="w-[331px] h-[81px] text-[13px] text-left text-white">
+          ><span class="w-[400px] h-[81px] text-[13px] text-left text-[#fee47c]">STUD’ECO</span
+          ><span class="w-[400px] h-[81px] text-[13px] text-left text-white">
             est de devenir une ressource centralisée où les étudiants peuvent accéder à l'ensemble
             des opportunités offertes par leur carte étudiante ou lycéen.
           </span>
