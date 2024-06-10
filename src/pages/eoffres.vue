@@ -1,9 +1,5 @@
 <script setup lang="ts"></script>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alata&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
-
 
 <template>
   <div class="w-full max-w-screen-xl mx-auto p-5 relative">
