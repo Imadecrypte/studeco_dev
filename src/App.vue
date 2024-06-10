@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onErrorCaptured } from 'vue'
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, RouterView } from 'vue-router/auto'
 import HeaderPage from './components/HeaderPage.vue'
 import HeaderPage2 from './components/HeaderPage2.vue'
 import FooterPage from './components/FooterPage.vue'
@@ -18,7 +18,9 @@ onErrorCaptured((err, instance, info) => {
 <template>
   <component :is="headerType === 'default' ? HeaderPage : HeaderPage2" />
   <main>
-    <router-view />
+    <Suspense>
+      <RouterView />
+    </Suspense>
   </main>
   <FooterPage />
 </template>
