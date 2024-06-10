@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
 
-.titleh1 {
+.footerh1 {
   font-family: 'Jost' , sans-serif;
 }
 
@@ -40,7 +40,7 @@
           <line y1="0.5" x2="375" y2="0.5" stroke="white"></line>
         </svg>
         <div class="absolute top-[24px] w-full flex justify-center">
-          <p class="text-base text-center text-white">CONTACT</p>
+          <p class="text-base text-center text-white footerh1">CONTACT</p>
         </div>
         <svg
           width="400"
@@ -54,7 +54,7 @@
           <line y1="0.5" x2="375" y2="0.5" stroke="white"></line>
         </svg>
         <div class="absolute top-[85px] w-full flex justify-center">
-          <p class="text-base text-center uppercase text-white">à propos</p>
+          <p class="text-base text-center uppercase text-white footerh1">à propos</p>
         </div>
         <svg
           width="400"
@@ -68,7 +68,7 @@
           <line y1="0.5" x2="375" y2="0.5" stroke="white"></line>
         </svg>
         <div class="absolute top-[144px] w-full flex justify-center">
-          <p class="text-base text-center uppercase text-white">mentions légales</p>
+          <p class="text-base text-center uppercase text-white footerh1">mentions légales</p>
         </div>
         <svg
           width="400"
