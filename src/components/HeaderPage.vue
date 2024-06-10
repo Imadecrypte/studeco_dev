@@ -49,38 +49,38 @@ const closeMenu = () => {
         <div class="flex items-center space-x-4">
           <img src="/User.webp" class="w-[30px] h-[30px] object-contain" />
           <div @click="toggleMenu">
-        <svg
-          width="99"
-          height="95"
-          viewBox="0 0 99 95"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-[60px] h-[60px] sm:w-[98.64px] sm:h-[94.29px] relative top-1 sm:top-3.5 cursor-pointer"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M47.3938 20.7178V22.6514H63.1917H79.0089L78.9511 20.7546L78.8933 18.8762L63.1532 18.8209L47.3938 18.7841V20.7178Z"
-            fill="white"
-          ></path>
-          <path
-            d="M19.6511 47.1444V48.986H49.3204H78.9896V47.1444V45.3029H49.3204H19.6511V47.1444Z"
-            fill="white"
-          ></path>
-          <path
-            d="M19.6896 73.5159L19.7474 75.4127L35.5068 75.4679L51.2469 75.5048V73.5711V71.6374H35.449H19.6318L19.6896 73.5159Z"
-            fill="white"
-          ></path>
-        </svg>
-      </div>
+            <svg
+              width="99"
+              height="95"
+              viewBox="0 0 99 95"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-[60px] h-[60px] sm:w-[98.64px] sm:h-[94.29px] relative top-1 sm:top-3.5 cursor-pointer"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M47.3938 20.7178V22.6514H63.1917H79.0089L78.9511 20.7546L78.8933 18.8762L63.1532 18.8209L47.3938 18.7841V20.7178Z"
+                fill="white"
+              ></path>
+              <path
+                d="M19.6511 47.1444V48.986H49.3204H78.9896V47.1444V45.3029H49.3204H19.6511V47.1444Z"
+                fill="white"
+              ></path>
+              <path
+                d="M19.6896 73.5159L19.7474 75.4127L35.5068 75.4679L51.2469 75.5048V73.5711V71.6374H35.449H19.6318L19.6896 73.5159Z"
+                fill="white"
+              ></path>
+            </svg>
+          </div>
         </div>
       </div>
       <div
         class="absolute top-[73px] left-0 w-full flex justify-center space-x-10 text-white text-sm titleh1"
       >
-        <p>LA CARTE</p>
-        <p>LA LISTE</p>
-        <p>LES E-OFFRES</p>
-        <p>LE TOP</p>
+        <RouterLink to="/carte"><p>LA CARTE</p></RouterLink>
+        <RouterLink to="/liste"><p>LA LISTE</p></RouterLink>
+        <RouterLink to="/eoffres"><p>LES E-OFFRES</p></RouterLink>
+        <RouterLink to="/top"><p>LE TOP</p></RouterLink>
       </div>
       <div class="absolute bottom-[123px] left-1/2 transform -translate-x-1/2 text-center">
         <img src="/Studeco_2 5.webp" class="w-[168px] h-[173px] object-cover" />

@@ -16,8 +16,9 @@ onErrorCaptured((err, instance, info) => {
 </script>
 
 <template>
-  <component :is="headerType === 'default' ? HeaderPage : HeaderPage2" />
   <main>
+    <HeaderPage v-if="route.name === '/' " />
+    <HeaderPage2 v-if="route.name !== '/'" />
     <Suspense>
       <RouterView />
     </Suspense>
