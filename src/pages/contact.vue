@@ -4,12 +4,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
+body {
+  font-family: 'Alata', sans-serif;
+}
+
 .contact-container {
   width: 300px;
   background-color: #82c6a3;
   padding: 20px;
   border-radius: 15px;
-  margin: 0 auto; 
+  margin: 20px auto; /* Adds space above and below to lower the container */
 }
 
 .contact-title {
@@ -48,11 +52,18 @@
 }
 
 .contact-info {
-  margin-top: 20px;
+  margin: 20px 10px 0 10px; /* Adjusted margin to add space on the sides */
   background-color: #000;
   color: #fff;
-  padding: 10px;
+  padding: 20px;
   border-radius: 10px;
+  position: relative;
+}
+
+.contact-info-title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .contact-info p {
@@ -67,8 +78,9 @@
 }
 
 .contact-logo {
-  text-align: right; /* Align logo to the right */
-  margin-top: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 </style>
 
@@ -95,6 +107,7 @@
     </form>
   </div>
   <div class="contact-info">
+    <p class="contact-info-title">Informations</p>
     <p>
       <img src="/PngItem_5119843-1.svg" alt="Email"> business.studeco@gmail.com
     </p>
