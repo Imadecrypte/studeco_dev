@@ -2,10 +2,10 @@
 
 <template>
   <div class="w-full flex justify-center mt-6">
-    <footer>
-      <div class="w-[400px] h-[225px] relative">
+    <footer class="w-full">
+      <div class="w-full h-[225px] relative">
         <div
-          class="w-[400px] h-[225px] absolute left-0 top-0"
+          class="w-full h-[225px] absolute left-0 top-0"
           style="
             background: linear-gradient(
               134.68deg,

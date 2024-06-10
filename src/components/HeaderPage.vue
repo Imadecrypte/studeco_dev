@@ -1,9 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="flex justify-center items-center">
+  <div class="flex justify-center items-center w-full">
     <header>
-      <div class="w-[400px] h-[422px] relative">
+      <div class="w-full h-[422px]">
         <div class="w-full h-[422px] absolute left-[-11.5px] top-[-11.5px] rounded-[25px]"></div>
         <div
           class="w-full h-[411px] absolute left-[-0.5px] top-[-0.5px]"
