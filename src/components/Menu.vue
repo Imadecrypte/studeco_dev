@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router/auto'
 const emit = defineEmits(['closeMenu'])
 
 const sections = [
-  { title: 'Accueil', path: '/accueil' },
+  { title: 'Accueil', path: '/' },
   { title: 'Architecte', path: '/architecte' },
   { title: 'Galerie des oeuvres', path: '/galerie' },
   { title: 'Frise', path: '/frise' },
@@ -28,7 +28,7 @@ const handleLinkClick = () => {
             class="flex items-center text-left text-xl font-bold focus:outline-none"
             @click="handleLinkClick"
           >
-            <img src="/leaf-icon.svg" alt="Leaf icon" class="mr-2" />
+            <img src="/Studeco_2 4.webp" alt="studeco icon" class="mr-2" />
             <span>{{ section.title }}</span>
           </router-link>
         </li>
@@ -65,4 +65,3 @@ button:hover {
   color: #7f9366;
 }
 </style>
-
