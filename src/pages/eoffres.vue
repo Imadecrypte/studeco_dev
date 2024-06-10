@@ -1,6 +1,5 @@
 <script setup lang="ts"></script>
 
-
 <template>
   <div class="w-full max-w-screen-xl mx-auto p-5 relative">
     <div class="font-alata text-4xl font-bold mb-2 text-left relative">
@@ -23,12 +22,13 @@
             <p class="m-0 text-lg font-bold">ASOS</p>
             <span class="block text-sm font-normal text-gray-600">-20% SUR TOUT</span>
           </div>
-          <img
-            src="/Internet.svg"
-            alt="Internet Icon"
-            class="ml-3 w-6 h-6 cursor-pointer"
-            @click="goToLink('https://www.asos.com')"
-          />
+          <a href="https://www.asos.com" target="_blank">
+            <img
+              src="/Internet.svg"
+              alt="Internet Icon"
+              class="ml-3 w-6 h-6 cursor-pointer"
+            />
+          </a>
         </div>
       </div>
       <div
@@ -44,12 +44,13 @@
               >-20% DE RÉDUCTION POUR LES ÉTUDIANTS</span
             >
           </div>
-          <img
-            src="/Internet.svg"
-            alt="Internet Icon"
-            class="ml-3 w-6 h-6 cursor-pointer"
-            @click="goToLink('https://www.etam.com')"
-          />
+          <a href="https://www.etam.com" target="_blank">
+            <img
+              src="/Internet.svg"
+              alt="Internet Icon"
+              class="ml-3 w-6 h-6 cursor-pointer"
+            />
+          </a>
         </div>
       </div>
       <div
@@ -63,12 +64,13 @@
             <p class="m-0 text-lg font-bold">EMMA</p>
             <span class="block text-sm font-normal text-gray-600">JUSQU'À -50%</span>
           </div>
-          <img
-            src="/Internet.svg"
-            alt="Internet Icon"
-            class="ml-3 w-6 h-6 cursor-pointer"
-            @click="goToLink('https://www.emma.fr')"
-          />
+          <a href="https://www.emma.fr" target="_blank">
+            <img
+              src="/Internet.svg"
+              alt="Internet Icon"
+              class="ml-3 w-6 h-6 cursor-pointer"
+            />
+          </a>
         </div>
       </div>
       <div
@@ -82,24 +84,19 @@
             <p class="m-0 text-lg font-bold">ADIDAS</p>
             <span class="block text-sm font-normal text-gray-600">-15% POUR LES ÉTUDIANTS</span>
           </div>
-          <img
-            src="/Internet.svg"
-            alt="Internet Icon"
-            class="ml-3 w-6 h-6 cursor-pointer"
-            @click="goToLink('https://www.adidas.com')"
-          />
+          <a href="https://www.adidas.com" target="_blank">
+            <img
+              src="/Internet.svg"
+              alt="Internet Icon"
+              class="ml-3 w-6 h-6 cursor-pointer"
+            />
+          </a>
         </div>
       </div>
     </div>
     <div class="absolute top-12 right-[-25px] w-12 h-12 bg-[#85D0D9] rounded-full"></div>
   </div>
 </template>
-
-<script setup lang="ts">
-function goToLink(url: string) {
-  window.open(url, '_blank')
-}
-</script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
