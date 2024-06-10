@@ -15,29 +15,33 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center;
+  position: relative;
 }
 
 .header {
   font-family: 'Alata', sans-serif;
   font-size: 36px;
   font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left;
   position: relative;
-  display: inline-block;
-  margin-bottom: 20px;
 }
 
-.header span {
-  background-color: #add8e6; 
-  padding: 0 10px;
+.header::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 10px;
+  background-color: #add8e6; /* Light blue */
   position: absolute;
   left: 0;
-  bottom: -10px;
+  bottom: -5px;
 }
 
 .subtitle {
   font-size: 18px;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .grid {
@@ -71,55 +75,64 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 18px; /* Adjusted the size */
+  font-weight: bold; /* Removed the bold */
   color: #000;
   margin: 0;
+}
+
+.yellow-circle {
+  position: absolute;
+  top: 50px; 
+  right: -25px; 
+  width: 50px;
+  height: 50px;
+  background-color: #ffd700; 
+  border-radius: 50%;
 }
 </style>
 
 <template>
   <div class="container">
-    <div class="header">
-      <span>NOTRE LISTE</span>
-    </div>
+    <div class="header">NOTRE LISTE</div>
     <p class="subtitle">
-      Si tu préfères retrouver les offres près de chez toi par thématique tu es au bon endroit !
+      Si tu préfères retrouver les offres près de chez toi par thématique tu es au bon endroit !<br />
       Consulte les différents thèmes et choisis en un afin de découvrir ses offres
     </p>
     <div class="grid">
-      <div class="grid-item">
+      <router-link to="/Mobilite" class="grid-item">
         <img src="/Mobilité.webp" alt="Mobilité">
         <p>MOBILITÉ</p>
-      </div>
-      <div class="grid-item">
+      </router-link>
+      <router-link to="/Alimentation" class="grid-item">
         <img src="/Alimentation.webp" alt="Alimentation">
         <p>ALIMENTATION</p>
-      </div>
-      <div class="grid-item">
+      </router-link>
+      <router-link to="/Sante" class="grid-item">
         <img src="/Santé.webp" alt="Santé">
         <p>SANTÉ</p>
-      </div>
-      <div class="grid-item">
+      </router-link>
+      <router-link to="/Vetement" class="grid-item">
         <img src="/Vêtement.webp" alt="Vêtement">
         <p>VÊTEMENT</p>
-      </div>
-      <div class="grid-item">
+      </router-link>
+      <router-link to="/Sport" class="grid-item">
         <img src="/Sport.webp" alt="Sport">
         <p>SPORT</p>
-      </div>
-      <div class="grid-item">
-        <img src="/Loisirs.webp" alt="Loisirs">
+      </router-link>
+      <router-link to="/Loisir" class="grid-item">
+        <img src="/Loisirs.webp" alt="Loisir">
         <p>LOISIR</p>
-      </div>
-      <div class="grid-item">
+      </router-link>
+      <router-link to="/Culture" class="grid-item">
         <img src="/Culture.webp" alt="Culture">
         <p>CULTURE</p>
-      </div>
-      <div class="grid-item">
+      </router-link>
+      <router-link to="/Administratif" class="grid-item">
         <img src="/Admin.webp" alt="Administratif">
         <p>ADMINISTRATIF</p>
-      </div>
+      </router-link>
     </div>
+    <div class="yellow-circle"></div>
   </div>
 </template>
