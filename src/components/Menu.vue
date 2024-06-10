@@ -11,7 +11,7 @@ const sections = [
   { title: 'E-Offres', path: '/eoffres' },
   { title: 'Top', path: '/top' },
   { title: 'Contact', path: '/contact' },
-  { title: 'A Propos', path: '/apropos' },
+  { title: 'A Propos', path: '/a-propos' },
   { title: 'Inscription', path: '/inscription' },
   { title: 'Connexion', path: '/login' }
 ]
