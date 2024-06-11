@@ -23,22 +23,30 @@
         </li>
       </ul>
       <div class="additional-links">
-        <div class="link-container">
-          <div class="link-background"></div>
-          <p class="link-text">Contact</p>
-        </div>
-        <div class="link-container">
-          <div class="link-background"></div>
-          <p class="link-text"><span class="uppercase">à </span><span>propos</span></p>
-        </div>
-        <div class="link-container">
-          <div class="link-background"></div>
-          <p class="link-text">Inscription</p>
-        </div>
-        <div class="link-container">
-          <div class="link-background"></div>
-          <p class="link-text text-sm">Mentions Légales</p>
-        </div>
+        <router-link to="/contact">
+          <div class="link-container">
+            <div class="link-background"></div>
+            <p class="link-text">Contact</p>
+          </div>
+        </router-link>
+        <router-link to="/a-propos">
+          <div class="link-container">
+            <div class="link-background"></div>
+            <p class="link-text"><span class="uppercase">à </span><span>propos</span></p>
+          </div>
+        </router-link>
+        <router-link to="/inscription">
+          <div class="link-container">
+            <div class="link-background"></div>
+            <p class="link-text">Inscription</p>
+          </div>
+        </router-link>
+        <router-link to="/mentions-legales">
+          <div class="link-container">
+            <div class="link-background"></div>
+            <p class="link-text text-sm">Mentions Légales</p>
+          </div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -107,7 +115,7 @@ const handleLinkClick = () => {
     #47d2e4 79.1%,
     #86d2fd 87.45%
   );
-  height: 100px; 
+  height: 100px;
 }
 
 .menu-sections {
