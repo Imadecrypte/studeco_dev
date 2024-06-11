@@ -23,25 +23,25 @@
         </li>
       </ul>
       <div class="additional-links">
-        <router-link to="/contact">
+        <router-link to="/contact" @click.native="handleLinkClick">
           <div class="link-container">
             <div class="link-background"></div>
             <p class="link-text">Contact</p>
           </div>
         </router-link>
-        <router-link to="/a-propos">
+        <router-link to="/a-propos" @click.native="handleLinkClick">
           <div class="link-container">
             <div class="link-background"></div>
             <p class="link-text"><span class="uppercase">à </span><span>propos</span></p>
           </div>
         </router-link>
-        <router-link to="/inscription">
+        <router-link to="/inscription" @click.native="handleLinkClick">
           <div class="link-container">
             <div class="link-background"></div>
             <p class="link-text">Inscription</p>
           </div>
         </router-link>
-        <router-link to="/mentions-legales">
+        <router-link to="/mentions-legales" @click.native="handleLinkClick">
           <div class="link-container">
             <div class="link-background"></div>
             <p class="link-text text-sm">Mentions Légales</p>
