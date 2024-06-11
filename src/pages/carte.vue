@@ -1,5 +1,7 @@
 <template>
-  <div id="map" class="h-screen"></div>
+  <div class="flex justify-center items-center pt-4">
+    <div id="map" class="h-screen"></div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -18,7 +20,6 @@ const villes = {
     { lat: 47.4493784, lon: 6.8031718 },
   "<div class='marqueur'>5 € DE RÉDUCTION DÈS 50 € D'ACHAT<br>DES JEUX QUI DES BOITES<br>24 rue Georges Clémenceau<br>25200 Montbéliard<br>09 84 45 28 84</div>":
     { lat: 47.51043, lon: 6.795931 }
-  // Ajoutez d'autres villes ici...
 }
 
 onMounted(() => {
@@ -49,13 +50,8 @@ onMounted(() => {
 @import url('https://unpkg.com/leaflet@1.3.1/dist/leaflet.css');
 
 #map {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  align-content: center;
-
-  width: 80%;
-  height: 75vh; /* Full screen height */
+  width: 90%;
+  height: 75vh;
 }
 
 .marqueur {
