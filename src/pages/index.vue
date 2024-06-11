@@ -1,22 +1,19 @@
 <script setup lang="ts"></script>
 
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 .title_card {
-  font-family: 'Jost' , sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 
 .card {
-  font-family: 'Jost' , sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 
 .access {
-  font-family: 'Jost' , sans-serif;
+  font-family: 'Jost', sans-serif;
 }
-
 </style>
 
 <template>
@@ -26,7 +23,10 @@
     <div class="absolute left-5 top-[146px]">
       <p class="text-[13px] text-left text-black access">Voir la carte</p>
     </div>
-    <p class="absolute left-[85px] top-[12px] text-base text-left uppercase text-[#abd3ff] title_card">
+    <p
+      class="absolute left-[85px] top-[12px] text-base text-left uppercase text-[#abd3ff] title_card"
+      id="carte"
+    >
       La Carte de Localisation
     </p>
     <p class="absolute left-8 top-[48px] text-[10px] text-left text-white w-[190px] h-[72px] card">
@@ -58,7 +58,10 @@
       src="/Back Arrow(1).svg"
       class="w-[17px] h-[17px] absolute left-[90px] top-[147px] object-contain"
     />
-    <p class="absolute left-[114px] top-[12px] text-base text-left uppercase text-[#ffbfd2] title_card">
+    <p
+      class="absolute left-[114px] top-[12px] text-base text-left uppercase text-[#ffbfd2] title_card"
+      id="liste"
+    >
       La Liste des Offres
     </p>
     <p class="absolute left-9 top-[56px] text-[10px] text-left text-white w-[185px] h-[66px] card">
@@ -73,7 +76,10 @@
     <div class="absolute left-[20px] top-[149px]">
       <p class="text-xs text-left text-black access">Voir les offres</p>
     </div>
-    <p class="absolute left-24 top-[14px] text-base text-left uppercase text-[#82ffb4] title_card">
+    <p
+      class="absolute left-24 top-[14px] text-base text-left uppercase text-[#82ffb4] title_card"
+      id="eoffres"
+    >
       Les offres numériques
     </p>
     <img
@@ -96,7 +102,9 @@
     <div class="absolute left-[20px] top-[149px]">
       <p class="text-xs text-left text-black access">Voir le TOP</p>
     </div>
-    <p class="absolute left-[163px] top-[12px] text-base text-left uppercase text-[#fff3bd] title_card">
+    <p
+      class="absolute left-[163px] top-[12px] text-base text-left uppercase text-[#fff3bd] title_card" id="top"
+    >
       Le top
     </p>
     <p class="absolute left-[34px] top-[56px] text-[10px] text-left text-white w-[170px] card">

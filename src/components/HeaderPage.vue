@@ -12,6 +12,13 @@ const toggleMenu = () => {
 const closeMenu = () => {
   isMenuOpen.value = false
 }
+
+const scrollToSection = (sectionId) => {
+  const section = document.getElementById(sectionId)
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 </script>
 
 <style>
@@ -77,10 +84,10 @@ const closeMenu = () => {
       <div
         class="absolute top-[73px] left-0 w-full flex justify-center space-x-10 text-white text-sm titleh1"
       >
-        <RouterLink to="/carte"><p>LA CARTE</p></RouterLink>
-        <RouterLink to="/liste"><p>LA LISTE</p></RouterLink>
-        <RouterLink to="/eoffres"><p>LES E-OFFRES</p></RouterLink>
-        <RouterLink to="/top"><p>LE TOP</p></RouterLink>
+        <button @click="scrollToSection('carte')" class="focus:outline-none">LA CARTE</button>
+        <button @click="scrollToSection('liste')" class="focus:outline-none">LA LISTE</button>
+        <button @click="scrollToSection('eoffres')" class="focus:outline-none">LES E-OFFRES</button>
+        <button @click="scrollToSection('top')" class="focus:outline-none">LE TOP</button>
       </div>
       <div class="absolute bottom-[123px] left-1/2 transform -translate-x-1/2 text-center">
         <img src="/Studeco_2 5.webp" class="w-[168px] h-[173px] object-cover" />
