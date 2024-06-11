@@ -55,7 +55,7 @@
           <button
             class="w-[75%] h-8 py-2 px-4 bg-green-400 text-white hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 rounded-[30px]"
           >
-            <RouterLink to="/register">
+            <RouterLink to="/inscription">
               <div class="text-black text-base font-normal font-['Jost']">Créer un compte</div>
             </RouterLink>
           </button>
