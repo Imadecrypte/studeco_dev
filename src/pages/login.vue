@@ -9,7 +9,7 @@
       </div>
       <div class="p-6">
         <h2 class="text-xl font-semibold mb-4">Connexion</h2>
-        <form @submit.prevent="login" class="space-y-4">
+        <form @submit.prevent="handleSubmit" class="space-y-4">
           <div>
             <label for="email" class="block text-gray-700">Adresse mail ou N°tel</label>
             <input
@@ -33,9 +33,7 @@
               <input type="checkbox" v-model="remember" id="remember" class="mr-2" />
               <label for="remember" class="text-gray-700 text-sm">Se souvenir de moi</label>
             </div>
-            <RouterLink to="/forgot-password" class="text-sm text-green-500 hover:underline"
-              >Mot de passe oublié?</RouterLink
-            >
+            <RouterLink to="/forgot-password" class="text-sm text-green-500 hover:underline">Mot de passe oublié?</RouterLink>
           </div>
           <div>
             <button
@@ -46,6 +44,12 @@
             </button>
           </div>
         </form>
+        <div v-if="errorMessage" class="mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+          <span class="block sm:inline">{{ errorMessage }}</span>
+        </div>
+        <div v-if="successMessage" class="mt-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+          <span class="block sm:inline">{{ successMessage }}</span>
+        </div>
         <div class="mt-4 text-center">
           <p class="text-sm text-gray-700">Pas de compte ?</p>
           <button
@@ -62,28 +66,40 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from 'vue';
+import PocketBase, { ClientResponseError } from 'pocketbase';
 
-const email = ref('')
-const password = ref('')
-const remember = ref(false)
+const pb = new PocketBase('http://127.0.0.1:8090');
 
-const login = () => {
-  console.log({
-    email: email.value,
-    password: password.value,
-    remember: remember.value
-  })
-}
+const email = ref('');
+const password = ref('');
+const remember = ref(false);
+
+const errorMessage = ref<string | null>(null);
+const successMessage = ref<string | null>(null);
+
+const handleSubmit = async () => {
+  try {
+    const authData = await pb.collection('users').authWithPassword(email.value, password.value);
+    successMessage.value = 'Connexion réussie. Bienvenue !';
+    errorMessage.value = null;
+    // Redirigez l'utilisateur vers la page d'accueil ou une autre page
+  } catch (err) {
+    console.error('Failed to login:', err);
+    if (err instanceof ClientResponseError) {
+      errorMessage.value = `Échec de la connexion : ${err.message || 'Veuillez réessayer.'}`;
+    } else {
+      errorMessage.value = "Échec de la connexion, veuillez réessayer.";
+    }
+    successMessage.value = null;
+  }
+};
 </script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Ajout de cette règle pour s'assurer qu'il n'y a pas de marge par défaut */
-body,
-html,
-#app {
+body, html, #app {
   margin: 0;
   padding: 0;
   height: 100%;
