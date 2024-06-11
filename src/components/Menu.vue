@@ -1,26 +1,3 @@
-<script setup lang="ts">
-import { defineEmits } from 'vue'
-import { RouterLink } from 'vue-router/auto'
-
-const emit = defineEmits(['closeMenu'])
-
-const sections = [
-  { title: 'Accueil', path: '/' },
-  { title: 'Carte', path: '/carte' },
-  { title: 'Liste', path: '/liste' },
-  { title: 'E-Offres', path: '/eoffres' },
-  { title: 'Top', path: '/top' },
-  { title: 'Contact', path: '/contact' },
-  { title: 'A Propos', path: '/a-propos' },
-  { title: 'Inscription', path: '/inscription' },
-  { title: 'Connexion', path: '/login' }
-]
-
-const handleLinkClick = () => {
-  emit('closeMenu')
-}
-</script>
-
 <template>
   <div class="menu-overlay">
     <div class="menu-content">
@@ -45,9 +22,46 @@ const handleLinkClick = () => {
           </router-link>
         </li>
       </ul>
+      <div class="additional-links">
+        <div class="link-container">
+          <div class="link-background"></div>
+          <p class="link-text">Contact</p>
+        </div>
+        <div class="link-container">
+          <div class="link-background"></div>
+          <p class="link-text"><span class="uppercase">à </span><span>propos</span></p>
+        </div>
+        <div class="link-container">
+          <div class="link-background"></div>
+          <p class="link-text">Inscription</p>
+        </div>
+        <div class="link-container">
+          <div class="link-background"></div>
+          <p class="link-text text-sm">Mentions Légales</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { defineEmits } from 'vue'
+import { RouterLink } from 'vue-router/auto'
+
+const emit = defineEmits(['closeMenu'])
+
+const sections = [
+  { title: 'Accueil', path: '/' },
+  { title: 'Carte', path: '/carte' },
+  { title: 'Liste', path: '/liste' },
+  { title: 'E-Offres', path: '/eoffres' },
+  { title: 'Top', path: '/top' }
+]
+
+const handleLinkClick = () => {
+  emit('closeMenu')
+}
+</script>
 
 <style scoped>
 .menu-overlay {
@@ -93,7 +107,7 @@ const handleLinkClick = () => {
     #47d2e4 79.1%,
     #86d2fd 87.45%
   );
-  height: 100px; /* Correspondre à la hauteur du header-container */
+  height: 100px; 
 }
 
 .menu-sections {
@@ -110,6 +124,36 @@ const handleLinkClick = () => {
 
 .menu-item:last-child {
   border-bottom: none;
+}
+
+.additional-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.link-container {
+  width: 134px;
+  height: 47px;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.link-background {
+  width: 134px;
+  height: 47px;
+  border-radius: 15px;
+  background: #4ebe8c;
+}
+
+.link-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
 }
 
 .close-button {
