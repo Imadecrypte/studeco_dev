@@ -1,10 +1,11 @@
 <template>
-  <div class="flex flex-col items-center min-h-screen pt-10">
+  <div class="flex flex-col items-center min-h-screen pt-10 m-4">
     <div class="flex flex-col items-center w-full max-w-md mx-auto">
       <div class="bg-[#82c6a3] w-full rounded-t-lg overflow-hidden shadow-lg p-6">
         <h2 class="text-2xl font-bold text-center text-black mb-4">Contactez-nous</h2>
         <p class="text-center text-black mb-6">
-          N'hésitez pas à nous envoyer un message, que ce soit une question, une demande ou encore un avis nous serons ravis de nous en préoccuper
+          N'hésitez pas à nous envoyer un message, que ce soit une question, une demande ou encore
+          un avis nous serons ravis de nous en préoccuper
         </p>
         <form @submit.prevent="handleSubmit" class="space-y-4">
           <div>
@@ -45,16 +46,18 @@
       <div class="bg-black text-white p-6 w-full rounded-b-lg shadow-lg relative">
         <p class="text-center font-bold mb-4">Informations</p>
         <p class="flex items-center mb-2">
-          <img src="/PngItem_5119843-1.svg" alt="Email" class="mr-2 h-6 w-6"> business.studeco@gmail.com
+          <img src="/PngItem_5119843-1.svg" alt="Email" class="mr-2 h-6 w-6" />
+          business.studeco@gmail.com
         </p>
         <p class="flex items-center mb-2">
-          <img src="/PngItem_96593-1.svg" alt="Phone" class="mr-2 h-6 w-6"> 06 02 09 75 00
+          <img src="/PngItem_96593-1.svg" alt="Phone" class="mr-2 h-6 w-6" /> 06 02 09 75 00
         </p>
         <p class="flex items-center mb-2">
-          <img src="/Logo-instagram-png-blanc-2.svg" alt="Instagram" class="mr-2 h-6 w-6"> STUDECO25
+          <img src="/Logo-instagram-png-blanc-2.svg" alt="Instagram" class="mr-2 h-6 w-6" />
+          STUDECO25
         </p>
         <div class="absolute top-4 right-4">
-          <img src="/Studeco_2 4.webp" alt="STUDECO" class="h-10">
+          <img src="/Studeco_2 4.webp" alt="STUDECO" class="h-10" />
         </div>
       </div>
     </div>
