@@ -42,6 +42,12 @@
             Envoyer
           </button>
         </form>
+        <div v-if="successMessage" class="mt-4 p-4 bg-green-200 text-green-800 rounded-lg">
+          {{ successMessage }}
+        </div>
+        <div v-if="errorMessage" class="mt-4 p-4 bg-red-200 text-red-800 rounded-lg">
+          {{ errorMessage }}
+        </div>
       </div>
       <div class="bg-black text-white p-6 w-full rounded-b-lg shadow-lg relative">
         <p class="text-center font-bold mb-4">Informations</p>
@@ -86,7 +92,7 @@ const handleSubmit = async () => {
       email: form.email,
       message: form.message
     })
-    successMessage.value = 'Votre message a été envoyé avec succès.'
+    successMessage.value = 'Merci pour votre feedback.'
     errorMessage.value = null
     form.name = ''
     form.email = ''
