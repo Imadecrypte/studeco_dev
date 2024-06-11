@@ -1,5 +1,16 @@
 <template>
-  <div class="flex justify-center items-center pt-4">
+  <div class="container mx-auto p-5 relative">
+    <div class="header font-alata text-3xl font-bold mb-2 relative">
+      NOTRE CARTE
+      <span class="after-element"></span>
+    </div>
+    <p class="subtitle text-lg mb-5">
+      Ne ratez plus aucune opportunité, STUD’ECO vous ouvre la porte vers une vie étudiante plus
+      sereine.<br />
+      Les bons plans les plus proches de chez-vous !
+    </p>
+  </div>
+  <div class="flex justify-center items-center px-4">
     <div id="map" class="h-screen"></div>
   </div>
 </template>
@@ -56,5 +67,16 @@ onMounted(() => {
 
 .marqueur {
   text-align: left;
+}
+
+.after-element {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 10px;
+  background-color: #add8e6; /* Light blue */
+  position: absolute;
+  left: 0;
+  bottom: -5px;
 }
 </style>
