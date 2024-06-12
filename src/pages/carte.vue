@@ -68,8 +68,16 @@ function geoloc() {
     // Recentrer la carte sur la position de l'utilisateur
     macarte.setView([userLat, userLon], 14)
 
-    // Ajouter un marqueur pour la position de l'utilisateur
-    const userMarker = L.marker([userLat, userLon]).addTo(macarte)
+    // Créer une icône personnalisée pour la position de l'utilisateur
+    const userIcon = L.icon({
+      iconUrl: '/marker.svg', // URL de l'icône orange
+      iconSize: [25, 41], // Taille de l'icône
+      iconAnchor: [12, 41], // Point de l'icône correspondant à la position du marqueur
+      popupAnchor: [1, -34] // Point à partir duquel la popup doit s'ouvrir par rapport à l'iconAnchor
+    })
+
+    // Ajouter un marqueur pour la position de l'utilisateur avec l'icône personnalisée
+    const userMarker = L.marker([userLat, userLon], { icon: userIcon }).addTo(macarte)
     userMarker.bindPopup("<div class='marqueur'>Vous êtes ici</div>").openPopup()
   }
 
@@ -99,7 +107,7 @@ function geoloc() {
   display: block;
   width: 100px;
   height: 10px;
-  background-color: #add8e6;
+  background-color: #add8e6; /* Light blue */
   position: absolute;
   left: 0;
   bottom: -5px;
