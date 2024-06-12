@@ -50,11 +50,44 @@ onMounted(() => {
       const marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte)
       marker.bindPopup(ville)
     }
+
+    // Initialiser la géolocalisation
+    geoloc()
   }
 
   // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
   initMap()
 })
+
+function geoloc() {
+  var geoSuccess = function(position) { // Ceci s'exécutera si l'utilisateur accepte la géolocalisation
+    const userLat = position.coords.latitude
+    const userLon = position.coords.longitude
+    console.log("lat: " + userLat + " - lon: " + userLon)
+
+    // Recentrer la carte sur la position de l'utilisateur
+    macarte.setView([userLat, userLon], 14)
+
+    // Créer une icône personnalisée pour la position de l'utilisateur
+    const userIcon = L.icon({
+      iconUrl: '/marker.svg', // URL de l'icône orange
+      iconSize: [25, 41], // Taille de l'icône
+      iconAnchor: [12, 41], // Point de l'icône correspondant à la position du marqueur
+      popupAnchor: [1, -34] // Point à partir duquel la popup doit s'ouvrir par rapport à l'iconAnchor
+    })
+
+    // Ajouter un marqueur pour la position de l'utilisateur avec l'icône personnalisée
+    const userMarker = L.marker([userLat, userLon], { icon: userIcon }).addTo(macarte)
+    userMarker.bindPopup("<div class='marqueur'>Vous êtes ici</div>").openPopup()
+  }
+
+  var geoFail = function() { // Ceci s'exécutera si l'utilisateur refuse la géolocalisation
+    console.log("Géolocalisation refusée")
+  }
+
+  // La ligne ci-dessous cherche la position de l'utilisateur et déclenchera la demande d'accord
+  navigator.geolocation.getCurrentPosition(geoSuccess, geoFail)
+}
 </script>
 
 <style>
