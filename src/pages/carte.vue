@@ -30,7 +30,9 @@ const villes = {
   "<div class='marqueur'>UN ATELIER D'ÉVEIL À LA CRÉATION OFFERT<br>Frédérique Tissot - Art Thérapeute<br>4 rue André Boulloche<br>25200 Montbéliard<br>06 29 23 89 84</div>":
     { lat: 47.4493784, lon: 6.8031718 },
   "<div class='marqueur'>5 € DE RÉDUCTION DÈS 50 € D'ACHAT<br>DES JEUX QUI DES BOITES<br>24 rue Georges Clémenceau<br>25200 Montbéliard<br>09 84 45 28 84</div>":
-    { lat: 47.51043, lon: 6.795931 }
+    { lat: 47.51043, lon: 6.795931 },
+  "<div class='marqueur'>PEPE CHICKEN<br>18 pass. des augustins<br>Mulhouse<br>03 89 66 47 47</div>":
+    { lat: 47.7464407, lon: 7.3348223 }
 }
 
 onMounted(() => {
@@ -60,10 +62,11 @@ onMounted(() => {
 })
 
 function geoloc() {
-  var geoSuccess = function(position) { // Ceci s'exécutera si l'utilisateur accepte la géolocalisation
+  var geoSuccess = function (position) {
+    // Ceci s'exécutera si l'utilisateur accepte la géolocalisation
     const userLat = position.coords.latitude
     const userLon = position.coords.longitude
-    console.log("lat: " + userLat + " - lon: " + userLon)
+    console.log('lat: ' + userLat + ' - lon: ' + userLon)
 
     // Recentrer la carte sur la position de l'utilisateur
     macarte.setView([userLat, userLon], 14)
@@ -81,8 +84,9 @@ function geoloc() {
     userMarker.bindPopup("<div class='marqueur'>Vous êtes ici</div>").openPopup()
   }
 
-  var geoFail = function() { // Ceci s'exécutera si l'utilisateur refuse la géolocalisation
-    console.log("Géolocalisation refusée")
+  var geoFail = function () {
+    // Ceci s'exécutera si l'utilisateur refuse la géolocalisation
+    console.log('Géolocalisation refusée')
   }
 
   // La ligne ci-dessous cherche la position de l'utilisateur et déclenchera la demande d'accord

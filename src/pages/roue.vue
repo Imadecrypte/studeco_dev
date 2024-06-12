@@ -13,7 +13,7 @@
       <button @click="spinWheel" :disabled="spinning" class="spin-button">Jouer</button>
       <div v-if="prizeMessage" class="prize-message">{{ prizeMessage }}</div>
     </div>
-    <div class="m-4">*pour tout gains, veuillez effectuer une capture d'écran à envoyer dans le formulaire du site</div>
+    <div class="m-4">*pour tout gains, veuillez effectuer une capture d'écran à envoyer dans le formulaire de contact.</div>
   </template>
   
   <script>
