@@ -39,8 +39,8 @@
         <img src="/Culture.webp" alt="Culture" class="w-full h-full object-cover opacity-30" />
         <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-lg font-bold text-black m-0">CULTURE</p>
       </router-link>
-      <router-link to="/Administratif" class="grid-item relative border-2 border-black rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-        <img src="/Administration.webp" alt="Administratif" class="w-full h-full object-cover opacity-30" />
+      <router-link to="/Administration" class="grid-item relative border-2 border-black rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+        <img src="/Admin.webp" alt="Administratif" class="w-full h-full object-cover opacity-30" />
         <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-lg font-bold text-black m-0">ADMINISTRATIF</p>
       </router-link>
     </div>
