@@ -19,6 +19,8 @@ import { RouterLink } from 'vue-router';
   <div class="font-jost text-center p-5">
       <h1 class="text-2xl font-bold font-alata">MOBILITÉ</h1>
       <img src="/Mobilité_offre2.webp" alt="Car Image" class="mx-auto mt-10" />
+      <p class="mt-5">Bienvenue dans le thème de la mobilité, viens découvrir toutes les offres disponibles !</p>
+      <p class="mt-2 font-bold">Consulte les différentes offres et prend connaissance de sa description et de son utilitée.</p>
     
     <div class="relative border border-gray-300 rounded-lg my-5">
       <div class="flex justify-center relative z-10">
