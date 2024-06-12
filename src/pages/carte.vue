@@ -99,7 +99,7 @@ function geoloc() {
   display: block;
   width: 100px;
   height: 10px;
-  background-color: #add8e6; /* Light blue */
+  background-color: #add8e6;
   position: absolute;
   left: 0;
   bottom: -5px;
