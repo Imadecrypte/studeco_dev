@@ -23,7 +23,7 @@
         <img src="/Santé.webp" alt="Santé" class="w-full h-full object-cover opacity-30" />
         <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-lg font-bold text-black m-0">SANTÉ</p>
       </router-link>
-      <router-link to="/Vetement" class="grid-item relative border-2 border-black rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+      <router-link to="/Vetements" class="grid-item relative border-2 border-black rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
         <img src="/Vêtement.webp" alt="Vêtement" class="w-full h-full object-cover opacity-30" />
         <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-lg font-bold text-black m-0">VÊTEMENT</p>
       </router-link>
@@ -31,7 +31,7 @@
         <img src="/Sport.webp" alt="Sport" class="w-full h-full object-cover opacity-30" />
         <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-lg font-bold text-black m-0">SPORT</p>
       </router-link>
-      <router-link to="/Loisir" class="grid-item relative border-2 border-black rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+      <router-link to="/Loisirs" class="grid-item relative border-2 border-black rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
         <img src="/Loisirs.webp" alt="Loisir" class="w-full h-full object-cover opacity-30" />
         <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-lg font-bold text-black m-0">LOISIR</p>
       </router-link>
@@ -40,7 +40,7 @@
         <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-lg font-bold text-black m-0">CULTURE</p>
       </router-link>
       <router-link to="/Administratif" class="grid-item relative border-2 border-black rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-        <img src="/Admin.webp" alt="Administratif" class="w-full h-full object-cover opacity-30" />
+        <img src="/Administration.webp" alt="Administratif" class="w-full h-full object-cover opacity-30" />
         <p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-lg font-bold text-black m-0">ADMINISTRATIF</p>
       </router-link>
     </div>
