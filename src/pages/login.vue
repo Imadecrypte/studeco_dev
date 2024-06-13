@@ -1,3 +1,40 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useAuthStore } from '../stores/auth';
+import { useRouter } from 'vue-router';
+import PocketBase, {ClientResponseError} from 'pocketbase';
+
+const pb = new PocketBase('https://stud-eco.dezzaznail.fr:443');
+
+const email = ref('');
+const password = ref('');
+const remember = ref(false);
+
+const errorMessage = ref<string | null>(null);
+const successMessage = ref<string | null>(null);
+
+const authStore = useAuthStore();
+const router = useRouter();
+
+const handleSubmit = async () => {
+  try {
+    const authData = await pb.collection('users').authWithPassword(email.value, password.value);
+    authStore.setUser(authData.user); // Assuming you have a setUser function in your auth store
+    successMessage.value = 'Connexion réussie. Bienvenue !';
+    errorMessage.value = null;
+    router.push('/roue');
+  } catch (err) {
+    console.error('Failed to login:', err);
+    if (err instanceof ClientResponseError) {
+      errorMessage.value = `Échec de la connexion : ${err.message || 'Veuillez réessayer.'}`;
+    } else {
+      errorMessage.value = "Échec de la connexion, veuillez réessayer.";
+    }
+    successMessage.value = null;
+  }
+};
+</script>
+
 <template>
   <div class="bg-gray-100 flex justify-center items-center min-h-screen">
     <div class="bg-white w-full max-w-md mx-auto rounded-lg overflow-hidden shadow-lg">
@@ -65,36 +102,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue';
-import { useAuthStore } from '../stores/auth';
-import { useRouter } from 'vue-router';
-
-const email = ref('');
-const password = ref('');
-const remember = ref(false);
-
-const errorMessage = ref<string | null>(null);
-const successMessage = ref<string | null>(null);
-
-const authStore = useAuthStore();
-const router = useRouter();
-
-const handleSubmit = async () => {
-  const success = await authStore.login(email.value, password.value);
-  if (success) {
-    successMessage.value = 'Connexion réussie. Bienvenue !';
-    errorMessage.value = null;
-    // Redirigez l'utilisateur vers la page d'accueil ou une autre page
-    router.push('/roue');
-  } else {
-    errorMessage.value = "Échec de la connexion, veuillez réessayer.";
-    successMessage.value = null;
-  }
-};
-</script>
-
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
 body, html, #app {

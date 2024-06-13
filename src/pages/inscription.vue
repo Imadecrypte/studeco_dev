@@ -1,3 +1,64 @@
+<script setup lang="ts">
+import { reactive, ref } from 'vue';
+import PocketBase, { ClientResponseError } from 'pocketbase';
+
+const pb = new PocketBase('https://stud-eco.dezzaznail.fr:443'); // Utilisation de l'URL en ligne
+
+interface Form {
+  name: string;
+  email: string;
+  username: string;
+  password: string;
+  confirmPassword: string;
+}
+
+const form = reactive<Form>({
+  name: '',
+  email: '',
+  username: '',
+  password: '',
+  confirmPassword: ''
+});
+
+const errorMessage = ref<string | null>(null);
+const successMessage = ref<string | null>(null);
+
+const terms = ref(false);
+
+const handleSubmit = async () => {
+  if (form.password !== form.confirmPassword) {
+    errorMessage.value = 'Les mots de passe ne correspondent pas.';
+    return;
+  }
+
+  if (!terms.value) {
+    errorMessage.value = 'Vous devez accepter les conditions d’utilisations du site';
+    return;
+  }
+
+  try {
+    const user = await pb.collection('users').create({
+      name: form.name,
+      email: form.email,
+      username: form.username,
+      password: form.password,
+      passwordConfirm: form.confirmPassword,
+    });
+
+    successMessage.value = 'Inscription réussie. Vous pouvez maintenant vous connecter.';
+    errorMessage.value = null;
+  } catch (err) {
+    console.error('Failed to register:', err);
+    if (err instanceof ClientResponseError) {
+      errorMessage.value = `Échec de l'inscription : ${err.message || 'Veuillez réessayer.'}`;
+    } else {
+      errorMessage.value = "Échec de l'inscription, veuillez réessayer.";
+    }
+    successMessage.value = null;
+  }
+};
+</script>
+
 <template>
   <div class="bg-gray-100 flex justify-center items-center min-h-screen">
     <div class="bg-white w-full max-w-md mx-auto rounded-lg overflow-hidden shadow-lg">
@@ -91,66 +152,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { reactive, ref } from 'vue';
-import PocketBase, { ClientResponseError } from 'pocketbase';
-
-const pb = new PocketBase('http://127.0.0.1:8090');
-
-interface Form {
-  name: string;
-  email: string;
-  username: string;
-  password: string;
-  confirmPassword: string;
-}
-
-const form = reactive<Form>({
-  name: '',
-  email: '',
-  username: '',
-  password: '',
-  confirmPassword: ''
-});
-
-const errorMessage = ref<string | null>(null);
-const successMessage = ref<string | null>(null);
-
-const handleSubmit = async () => {
-  if (form.password !== form.confirmPassword) {
-    errorMessage.value = 'Les mots de passe ne correspondent pas.';
-    return;
-  }
-
-  if (!terms.value) {
-    errorMessage.value = 'Vous devez accepter les conditions d’utilisations du site';
-    return;
-  }
-
-  try {
-    const user = await pb.collection('users').create({
-      name: form.name,
-      email: form.email,
-      username: form.username,
-      password: form.password,
-      passwordConfirm: form.confirmPassword,
-    });
-
-    successMessage.value = 'Inscription réussie. Vous pouvez maintenant vous connecter.';
-    errorMessage.value = null;
-  } catch (err) {
-    console.error('Failed to register:', err);
-    if (err instanceof ClientResponseError) {
-      errorMessage.value = `Échec de l'inscription : ${err.message || 'Veuillez réessayer.'}`;
-    } else {
-      errorMessage.value = "Échec de l'inscription, veuillez réessayer.";
-    }
-    successMessage.value = null;
-  }
-};
-</script>
-
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
 body, html, #app {
