@@ -67,9 +67,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import PocketBase, { ClientResponseError } from 'pocketbase';
-
-const pb = new PocketBase('http://127.0.0.1:8090');
+import { useAuthStore } from '../stores/auth';
+import { useRouter } from 'vue-router';
 
 const email = ref('');
 const password = ref('');
@@ -78,19 +77,18 @@ const remember = ref(false);
 const errorMessage = ref<string | null>(null);
 const successMessage = ref<string | null>(null);
 
+const authStore = useAuthStore();
+const router = useRouter();
+
 const handleSubmit = async () => {
-  try {
-    const authData = await pb.collection('users').authWithPassword(email.value, password.value);
+  const success = await authStore.login(email.value, password.value);
+  if (success) {
     successMessage.value = 'Connexion réussie. Bienvenue !';
     errorMessage.value = null;
     // Redirigez l'utilisateur vers la page d'accueil ou une autre page
-  } catch (err) {
-    console.error('Failed to login:', err);
-    if (err instanceof ClientResponseError) {
-      errorMessage.value = `Échec de la connexion : ${err.message || 'Veuillez réessayer.'}`;
-    } else {
-      errorMessage.value = "Échec de la connexion, veuillez réessayer.";
-    }
+    router.push('/roue');
+  } else {
+    errorMessage.value = "Échec de la connexion, veuillez réessayer.";
     successMessage.value = null;
   }
 };
