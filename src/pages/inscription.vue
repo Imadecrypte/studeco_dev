@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { reactive, ref } from 'vue';
-import PocketBase, { ClientResponseError } from 'pocketbase';
-
-const pb = new PocketBase('https://stud-eco.dezzaznail.fr:443'); // Utilisation de l'URL en ligne
+import { reactive, ref } from 'vue'
+import { registerUser } from './backend.ts'
 
 interface Form {
   name: string;
@@ -18,45 +16,33 @@ const form = reactive<Form>({
   username: '',
   password: '',
   confirmPassword: ''
-});
+})
 
-const errorMessage = ref<string | null>(null);
-const successMessage = ref<string | null>(null);
+const errorMessage = ref<string | null>(null)
+const successMessage = ref<string | null>(null)
 
-const terms = ref(false);
+const terms = ref(false)
 
 const handleSubmit = async () => {
   if (form.password !== form.confirmPassword) {
-    errorMessage.value = 'Les mots de passe ne correspondent pas.';
-    return;
+    errorMessage.value = 'Les mots de passe ne correspondent pas.'
+    return
   }
 
   if (!terms.value) {
-    errorMessage.value = 'Vous devez accepter les conditions d’utilisations du site';
-    return;
+    errorMessage.value = 'Vous devez accepter les conditions d’utilisations du site'
+    return
   }
 
   try {
-    const user = await pb.collection('users').create({
-      name: form.name,
-      email: form.email,
-      username: form.username,
-      password: form.password,
-      passwordConfirm: form.confirmPassword,
-    });
-
-    successMessage.value = 'Inscription réussie. Vous pouvez maintenant vous connecter.';
-    errorMessage.value = null;
+    const user = await registerUser(form.username, form.email, form.password, form.confirmPassword)
+    successMessage.value = 'Inscription réussie. Vous pouvez maintenant vous connecter.'
+    errorMessage.value = null
   } catch (err) {
-    console.error('Failed to register:', err);
-    if (err instanceof ClientResponseError) {
-      errorMessage.value = `Échec de l'inscription : ${err.message || 'Veuillez réessayer.'}`;
-    } else {
-      errorMessage.value = "Échec de l'inscription, veuillez réessayer.";
-    }
-    successMessage.value = null;
+    errorMessage.value = err.message || "Échec de l'inscription, veuillez réessayer."
+    successMessage.value = null
   }
-};
+}
 </script>
 
 <template>

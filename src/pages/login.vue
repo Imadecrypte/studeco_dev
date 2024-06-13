@@ -1,38 +1,37 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useAuthStore } from '../stores/auth';
-import { useRouter } from 'vue-router';
-import PocketBase, {ClientResponseError} from 'pocketbase';
+import { ref } from 'vue'
+import { ClientResponseError } from 'pocketbase'
+import { useAuthStore } from '../stores/auth'
+import { useRouter } from 'vue-router'
+import { loginUser } from './backend.ts'
 
-const pb = new PocketBase('https://stud-eco.dezzaznail.fr:443');
+const email = ref('')
+const password = ref('')
+const remember = ref(false)
 
-const email = ref('');
-const password = ref('');
-const remember = ref(false);
+const errorMessage = ref<string | null>(null)
+const successMessage = ref<string | null>(null)
 
-const errorMessage = ref<string | null>(null);
-const successMessage = ref<string | null>(null);
-
-const authStore = useAuthStore();
-const router = useRouter();
+const authStore = useAuthStore()
+const router = useRouter()
 
 const handleSubmit = async () => {
   try {
-    const authData = await pb.collection('users').authWithPassword(email.value, password.value);
-    authStore.setUser(authData.user); // Assuming you have a setUser function in your auth store
-    successMessage.value = 'Connexion réussie. Bienvenue !';
-    errorMessage.value = null;
-    router.push('/roue');
+    const authData = await loginUser(email.value, password.value)
+    authStore.setUser(authData.user)
+    successMessage.value = 'Connexion réussie. Bienvenue !'
+    errorMessage.value = null
+    router.push('/roue')
   } catch (err) {
-    console.error('Failed to login:', err);
+    console.error('Failed to login:', err)
     if (err instanceof ClientResponseError) {
-      errorMessage.value = `Échec de la connexion : ${err.message || 'Veuillez réessayer.'}`;
+      errorMessage.value = `Échec de la connexion : ${err.message || 'Veuillez réessayer.'}`
     } else {
-      errorMessage.value = "Échec de la connexion, veuillez réessayer.";
+      errorMessage.value = "Échec de la connexion, veuillez réessayer."
     }
-    successMessage.value = null;
+    successMessage.value = null
   }
-};
+}
 </script>
 
 <template>
