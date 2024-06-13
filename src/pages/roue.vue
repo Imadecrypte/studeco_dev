@@ -14,7 +14,7 @@
       <div v-if="prizeMessage" class="prize-message animated">{{ prizeMessage }}</div>
       <audio v-if="prizeMessage" id="win-sound" src="/tada-fanfare-a-6313.mp3" autoplay></audio>
     </div>
-    <div class="m-4 text">*pour tout gains, veuillez effectuer une capture d'écran à envoyer dans le formulaire de contact.</div>
+    <div class="m-4 text">*pour tout gains, veuillez effectuer une capture d'écran à envoyer sur notre adresse mail : business.studeco@gmail.com.</div>
   </template>
   
   <script>
