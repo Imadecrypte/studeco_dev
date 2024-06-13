@@ -47,6 +47,18 @@
             <p class="link-text text-sm">Mentions Légales</p>
           </div>
         </router-link>
+        <router-link to="/profil" @click.native="handleLinkClick">
+          <div class="link-container">
+            <div class="link-background"></div>
+            <p class="link-text text-sm">Compte</p>
+          </div>
+        </router-link>
+        <router-link to="/favoris" @click.native="handleLinkClick">
+          <div class="link-container">
+            <div class="link-background"></div>
+            <p class="link-text text-sm">Favoris</p>
+          </div>
+        </router-link>
       </div>
     </div>
   </div>
