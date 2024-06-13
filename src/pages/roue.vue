@@ -3,7 +3,7 @@
       <h1 class="wheel-title">La roue des bons plans 100 % gagnant</h1>
       <div class="wheel-container">
         <div class="pointer"></div>
-
+  
         <div class="wheel" :style="{ transform: 'rotate(' + rotation + 'deg)' }"></div>
         <div class="lights">
           <div v-for="n in 8" :key="n" class="light"></div>
@@ -11,7 +11,8 @@
       </div>
       
       <button @click="spinWheel" :disabled="spinning" class="spin-button">Jouer</button>
-      <div v-if="prizeMessage" class="prize-message">{{ prizeMessage }}</div>
+      <div v-if="prizeMessage" class="prize-message animated">{{ prizeMessage }}</div>
+      <audio v-if="prizeMessage" id="win-sound" src="/tada-fanfare-a-6313.mp3" autoplay></audio>
     </div>
     <div class="m-4 text">*pour tout gains, veuillez effectuer une capture d'écran à envoyer dans le formulaire de contact.</div>
   </template>
@@ -28,7 +29,6 @@
     methods: {
       spinWheel() {
         if (this.spinning) return;
-  
         this.spinning = true;
         this.prizeMessage = ''; 
         const spinDegrees = Math.floor(Math.random() * 3600) + 360;
@@ -44,6 +44,17 @@
         const normalizedRotation = this.rotation % 360;
         const prizeIndex = Math.floor(normalizedRotation / segmentAngle);
         this.prizeMessage = `Vous avez gagné : ${this.prizes[prizeIndex]} !`;
+  
+        // Play sound when the prize message is displayed
+        const winSound = document.getElementById('win-sound');
+        if (winSound) {
+          winSound.currentTime = 0; // Rewind to the start
+          winSound.play().catch(error => {
+            console.error("Erreur lors de la lecture du son : ", error);
+          });
+        } else {
+          console.error("Element audio introuvable");
+        }
       }
     },
     computed: {
@@ -56,6 +67,13 @@
           '1 menu PEPE Chicken gratuit',
           'Pack étudiant'
         ];
+      }
+    },
+    mounted() {
+      // Preload the audio
+      const winSound = document.getElementById('win-sound');
+      if (winSound) {
+        winSound.load();
       }
     }
   };
@@ -181,6 +199,16 @@
   .text {
     font-family: 'Alata', sans-serif;
   }
-
+  
+  /* Animation for the prize message */
+  .animated {
+    animation: bounce 0.5s ease;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
   </style>
+  
   
