@@ -42,7 +42,9 @@ import AdSenseScript from '../components/AdSenseScript.vue'
       >
         La Carte de Localisation
       </p>
-      <p class="absolute left-8 top-[48px] text-[10px] text-left text-white w-[190px] h-[72px] card">
+      <p
+        class="absolute left-8 top-[48px] text-[10px] text-left text-white w-[190px] h-[72px] card"
+      >
         Notre site internet intègre une fonctionnalité de carte de géolocalisation interactive, vous
         permettant de découvrir facilement les emplacements physiques des points d'intérêt, des
         magasins ou des événements près de chez vous.
@@ -74,7 +76,9 @@ import AdSenseScript from '../components/AdSenseScript.vue'
       >
         La Liste des Offres
       </p>
-      <p class="absolute left-9 top-[56px] text-[10px] text-left text-white w-[185px] h-[66px] card">
+      <p
+        class="absolute left-9 top-[56px] text-[10px] text-left text-white w-[185px] h-[66px] card"
+      >
         Une liste de toutes les offres à votre disposition avec différentes possibilités de filtres
         afin de vous faire gagner du temps mais aussi pour faciliter votre navigation.
       </p>
@@ -103,7 +107,9 @@ import AdSenseScript from '../components/AdSenseScript.vue'
       >
         Les offres numériques
       </p>
-      <p class="absolute left-9 top-[56px] text-[10px] text-left text-white w-[180px] h-[65px] card">
+      <p
+        class="absolute left-9 top-[56px] text-[10px] text-left text-white w-[180px] h-[65px] card"
+      >
         Voici un catalogue des différentes offres disponibles UNIQUEMENT sur Internet. Ce qui vous
         donnera accès à leurs lien respectif et une courte description.
       </p>
@@ -133,8 +139,8 @@ import AdSenseScript from '../components/AdSenseScript.vue'
         Le top
       </p>
       <p class="absolute left-[34px] top-[56px] text-[10px] text-left text-white w-[170px] card">
-        Découvrez un classement des meilleures offres de la communauté ainsi que leurs descriptions et
-        d’une notation.
+        Découvrez un classement des meilleures offres de la communauté ainsi que leurs descriptions
+        et d’une notation.
       </p>
       <img
         src="/trophee.webp"

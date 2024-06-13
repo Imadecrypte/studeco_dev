@@ -94,21 +94,21 @@ body {
       étudiants
     </p>
 
-    <div class="offer-card relative">
+    <div class="offer-card">
       <img src="/Bowling.webp" alt="Bowling Offer" />
       <div class="offer-details" style="background-color: #f84644">
-        <p>UNE PARTIE DE BOWLING OFFERTE POUR UNE PARTIE ACHETÉE PAR LA MÊME PERSONNE</p>
+        <p>UNE DE BOWLING OFFERTE POUR UNE PARTIE ACHETÉE PAR LA MÊME PERSONNE</p>
         <p>Bowling des 4 AS</p>
         <p>Centre commercial des 4 As</p>
         <p>90000 Belfort</p>
         <p>03 84 54 04 47</p>
       </div>
       <div class="heart-icon">
-      <img v-if="isLoggedIn" src="/heart.svg" alt="Heart" class="heart-icon" />
+        <img v-if="isLoggedIn" src="/heart.svg" alt="Heart" class="heart-icon" />
       </div>
     </div>
 
-    <div class="offer-card relative">
+    <div class="offer-card">
       <img src="/Sport2.webp" alt="Intersport Offer" />
       <div class="offer-details" style="background-color: #4b0082">
         <p>10 % DE RÉDUCTION SUR L'ARTICLE DE TON CHOIX</p>
@@ -117,10 +117,12 @@ body {
         <p>90000 Andelnans</p>
         <p>03 84 21 34 92</p>
       </div>
-      <img v-if="isLoggedIn" src="/heart.svg" alt="Heart" class="heart-icon" />
+      <div class="heart-icon">
+        <img v-if="isLoggedIn" src="/heart.svg" alt="Heart" class="heart-icon" />
+      </div>
     </div>
 
-    <div class="offer-card relative">
+    <div class="offer-card">
       <img src="/Donuts.webp" alt="Cosy Offer" />
       <div class="offer-details" style="background-color: #00ced1">
         <p>UN DONUT OFFERT POUR UN MENU DAILY OU DÉLICH ACHETÉ</p>
@@ -128,10 +130,12 @@ body {
         <p>Centre commercial des 4 AS</p>
         <p>90000 Belfort</p>
       </div>
-      <img v-if="isLoggedIn" src="/heart.svg" alt="Heart" class="heart-icon" />
+      <div class="heart-icon">
+        <img v-if="isLoggedIn" src="/heart.svg" alt="Heart" class="heart-icon" />
+      </div>
     </div>
 
-    <div class="offer-card relative">
+    <div class="offer-card">
       <img src="/Mcdo.webp" alt="McDonald's Offer" />
       <div class="offer-details" style="background-color: #ffa500">
         <p>10 % DE RÉDUCTION SUR UNE COMMANDE AU DRIVE</p>
@@ -140,10 +144,12 @@ body {
         <p>25200 Montbéliard</p>
         <p>03 81 90 00 04</p>
       </div>
-      <img v-if="isLoggedIn" src="/heart.svg" alt="Heart" class="heart-icon" />
+      <div class="heart-icon">
+        <img v-if="isLoggedIn" src="/heart.svg" alt="Heart" class="heart-icon" />
+      </div>
     </div>
 
-    <div class="offer-card relative">
+    <div class="offer-card">
       <img src="/Bk.webp" alt="Burger King Offer" />
       <div class="offer-details" style="background-color: #ff4500">
         <p>10 % DE RÉDUCTION SUR LA COMMANDE + 1 SANDWICH GRATUIT</p>
@@ -152,7 +158,9 @@ body {
         <p>25400 Exincourt</p>
         <p>03 81 37 15 90</p>
       </div>
-      <img v-if="isLoggedIn" src="/heart.svg" alt="Heart" class="heart-icon" />
+      <div class="heart-icon">
+        <img v-if="isLoggedIn" src="/heart.svg" alt="Heart" class="heart-icon" />
+      </div>
     </div>
   </div>
 </template>
