@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { ClientResponseError } from 'pocketbase'
 import { useAuthStore } from '../stores/auth'
 import { useRouter } from 'vue-router'
-import { loginUser } from './backend.ts'
+import { loginUser } from '../backend'
 
 const email = ref('')
 const password = ref('')

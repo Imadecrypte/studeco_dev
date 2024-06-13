@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
-import { registerUser } from './backend.ts'
+import { registerUser } from '../backend'
 
 interface Form {
   name: string;
@@ -39,6 +39,7 @@ const handleSubmit = async () => {
     successMessage.value = 'Inscription réussie. Vous pouvez maintenant vous connecter.'
     errorMessage.value = null
   } catch (err) {
+    console.error('Failed to register:', err)
     errorMessage.value = err.message || "Échec de l'inscription, veuillez réessayer."
     successMessage.value = null
   }
