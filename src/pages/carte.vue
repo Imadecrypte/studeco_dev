@@ -5,13 +5,12 @@
       <span class="after-element"></span>
     </div>
     <p class="subtitle text-lg mb-5">
-      Ne ratez plus aucune opportunité, STUD’ECO vous ouvre la porte vers une vie étudiante plus
-      sereine.<br />
+      Ne ratez plus aucune opportunité, STUD’ECO vous ouvre la porte vers une vie étudiante plus sereine.<br />
       Les bons plans les plus proches de chez-vous !
     </p>
   </div>
   <div class="flex justify-center items-center px-4">
-    <div id="map" class="h-screen"></div>
+    <div id="map" class="h-screen w-full"></div>
   </div>
 </template>
 
@@ -20,34 +19,31 @@ import { onMounted } from 'vue'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
-// On initialise la latitude et la longitude de Belfort (centre de la carte)
+// Initialisation des coordonnées de Belfort
 const lat = 47.6333
 const lon = 6.8667
-let macarte = null
+let macarte: L.Map | null = null
 
 // Liste des villes et leurs coordonnées
 const villes = {
-  "<div class='marqueur'>UN ATELIER D'ÉVEIL À LA CRÉATION OFFERT<br>Frédérique Tissot - Art Thérapeute<br>4 rue André Boulloche<br>25200 Montbéliard<br>06 29 23 89 84</div>":
-    { lat: 47.4493784, lon: 6.8031718 },
-  "<div class='marqueur'>5 € DE RÉDUCTION DÈS 50 € D'ACHAT<br>DES JEUX QUI DES BOITES<br>24 rue Georges Clémenceau<br>25200 Montbéliard<br>09 84 45 28 84</div>":
-    { lat: 47.51043, lon: 6.795931 },
-  "<div class='marqueur'>PEPE CHICKEN<br>18 pass. des augustins<br>Mulhouse<br>03 89 66 47 47</div>":
-    { lat: 47.7464407, lon: 7.3348223 }
+  "<div class='marqueur'>UNE PARTIE DE BOWLING OFFERTE POUR UNE PARTIE ACHETÉE PAR LA MÊME PERSONNE<br>Bowling des 4 AS<br>Centre commercial des 4 As<br>90000 Belfort<br>03 84 54 04 47</div>": { lat: 47.637367, lon: 6.852622 },
+  "<div class='marqueur'>10 % DE RÉDUCTION SUR L'ARTICLE DE TON CHOIX<br>Intersport - Belfort<br>6 route de Montbéliard<br>90000 Andelnans<br>03 84 21 34 92</div>": { lat: 47.616128, lon: 6.852102 },
+  "<div class='marqueur'>UN DONUT OFFERT POUR UN MENU DAILY OU DÉLICH ACHETÉ<br>Cosy café et cie<br>Centre commercial des 4 AS<br>90000 Belfort</div>": { lat: 47.637367, lon: 6.852622 },
+  "<div class='marqueur'>10 % DE RÉDUCTION SUR UNE COMMANDE AU DRIVE<br>Mc Donald's Montbéliard<br>Zac du Pied des Gouttes<br>25200 Montbéliard<br>03 81 90 00 04</div>": { lat: 47.508391, lon: 6.800918 },
+  "<div class='marqueur'>10 % DE RÉDUCTION SUR LA COMMANDE + 1 SANDWICH GRATUIT<br>Burger King Exincourt<br>4 rue Philippe Goudey, C.C Happyt<br>25400 Exincourt<br>03 81 37 15 90</div>": { lat: 47.497324, lon: 6.818370 }
 }
 
 onMounted(() => {
-  // Fonction d'initialisation de la carte
   function initMap() {
-    // Créer l'objet "macarte" et l'insérer dans l'élément HTML qui a l'ID "map"
+    // Initialiser la carte
     macarte = L.map('map').setView([lat, lon], 11)
-    // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
     L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-      // Il est toujours bien de laisser le lien vers la source des données
       attribution: 'données © OpenStreetMap/ODbL - rendu OSM France',
       minZoom: 1,
       maxZoom: 20
     }).addTo(macarte)
-    // Nous parcourons la liste des villes
+
+    // Ajouter les marqueurs des villes
     for (const ville in villes) {
       const marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte)
       marker.bindPopup(ville)
@@ -57,48 +53,45 @@ onMounted(() => {
     geoloc()
   }
 
-  // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
+  function geoloc() {
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoFail)
+
+    function geoSuccess(position: GeolocationPosition) {
+      const userLat = position.coords.latitude
+      const userLon = position.coords.longitude
+      console.log('lat: ' + userLat + ' - lon: ' + userLon)
+
+      // Recentrer la carte sur la position de l'utilisateur
+      macarte?.setView([userLat, userLon], 14)
+
+      // Créer une icône personnalisée pour la position de l'utilisateur
+      const userIcon = L.icon({
+        iconUrl: '/path/to/marker.svg', // Assurez-vous que le chemin est correct
+        iconSize: [25, 41], // Taille de l'icône
+        iconAnchor: [12, 41], // Point de l'icône correspondant à la position du marqueur
+        popupAnchor: [1, -34] // Point à partir duquel la popup doit s'ouvrir par rapport à l'iconAnchor
+      })
+
+      // Ajouter un marqueur pour la position de l'utilisateur avec l'icône personnalisée
+      const userMarker = L.marker([userLat, userLon], { icon: userIcon }).addTo(macarte!)
+      userMarker.bindPopup("<div class='marqueur'>Vous êtes ici</div>").openPopup()
+    }
+
+    function geoFail() {
+      console.log('Géolocalisation refusée')
+    }
+  }
+
+  // Initialisation de la carte
   initMap()
 })
-
-function geoloc() {
-  var geoSuccess = function (position) {
-    // Ceci s'exécutera si l'utilisateur accepte la géolocalisation
-    const userLat = position.coords.latitude
-    const userLon = position.coords.longitude
-    console.log('lat: ' + userLat + ' - lon: ' + userLon)
-
-    // Recentrer la carte sur la position de l'utilisateur
-    macarte.setView([userLat, userLon], 14)
-
-    // Créer une icône personnalisée pour la position de l'utilisateur
-    const userIcon = L.icon({
-      iconUrl: '/marker.svg', // URL de l'icône orange
-      iconSize: [25, 41], // Taille de l'icône
-      iconAnchor: [12, 41], // Point de l'icône correspondant à la position du marqueur
-      popupAnchor: [1, -34] // Point à partir duquel la popup doit s'ouvrir par rapport à l'iconAnchor
-    })
-
-    // Ajouter un marqueur pour la position de l'utilisateur avec l'icône personnalisée
-    const userMarker = L.marker([userLat, userLon], { icon: userIcon }).addTo(macarte)
-    userMarker.bindPopup("<div class='marqueur'>Vous êtes ici</div>").openPopup()
-  }
-
-  var geoFail = function () {
-    // Ceci s'exécutera si l'utilisateur refuse la géolocalisation
-    console.log('Géolocalisation refusée')
-  }
-
-  // La ligne ci-dessous cherche la position de l'utilisateur et déclenchera la demande d'accord
-  navigator.geolocation.getCurrentPosition(geoSuccess, geoFail)
-}
 </script>
 
 <style>
 @import url('https://unpkg.com/leaflet@1.3.1/dist/leaflet.css');
 
 #map {
-  width: 90%;
+  width: 100%;
   height: 75vh;
 }
 
