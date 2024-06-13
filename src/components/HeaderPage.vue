@@ -1,21 +1,35 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import Menu from './Menu.vue'
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { useAuthStore } from '../stores/auth';
+import Menu from './Menu.vue';
 
-const isMenuOpen = ref(false)
+const isMenuOpen = ref(false);
 const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value
-}
+  isMenuOpen.value = !isMenuOpen.value;
+};
 const closeMenu = () => {
-  isMenuOpen.value = false
-}
+  isMenuOpen.value = false;
+};
 
 const scrollToSection = (sectionId) => {
-  const section = document.getElementById(sectionId)
+  const section = document.getElementById(sectionId);
   if (section) {
-    section.scrollIntoView({ behavior: 'smooth' })
+    section.scrollIntoView({ behavior: 'smooth' });
   }
-}
+};
+
+// Utilisation du store Pinia pour vérifier l'état de l'authentification
+const authStore = useAuthStore();
+const router = useRouter();
+
+const handleUserClick = () => {
+  if (authStore.isLoggedIn) {
+    router.push('/profil');
+  } else {
+    router.push('/login');
+  }
+};
 </script>
 
 <style>
@@ -51,9 +65,11 @@ const scrollToSection = (sectionId) => {
           <img src="/Studeco_2 4.webp" class="w-[47px] h-[51px] object-cover" />
         </router-link>
         <div class="flex items-center space-x-4">
-          <router-link to="/login">
-            <img src="/User.webp" class="w-[30px] h-[30px] object-contain" />
-          </router-link>
+          <img
+            src="/User.webp"
+            class="w-[30px] h-[30px] object-contain cursor-pointer"
+            @click="handleUserClick"
+          />
           <div @click="toggleMenu" class="cursor-pointer">
             <div class="w-[33px] h-[3.5px] rounded-[25px] bg-white my-1"></div>
             <div class="w-[21px] h-1 rounded-[25px] bg-white my-1"></div>

@@ -7,7 +7,7 @@ const authStore = useAuthStore()
 const isLoggedIn = computed(() => authStore.isLoggedIn)
 </script>
 
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -79,10 +79,10 @@ body {
 
 .heart-icon {
   position: absolute;
-  top: 10px;
+  bottom: 10px;
   right: 10px;
-  width: 5px;
-  height: 5px;
+  width: 24px;
+  height: 24px;
 }
 </style>
 
@@ -94,7 +94,7 @@ body {
       étudiants
     </p>
 
-    <div class="offer-card">
+    <div class="offer-card relative">
       <img src="/Bowling.webp" alt="Bowling Offer" />
       <div class="offer-details" style="background-color: #f84644">
         <p>UNE PARTIE DE BOWLING OFFERTE POUR UNE PARTIE ACHETÉE PAR LA MÊME PERSONNE</p>
@@ -103,10 +103,12 @@ body {
         <p>90000 Belfort</p>
         <p>03 84 54 04 47</p>
       </div>
+      <div class="heart-icon">
       <img v-if="isLoggedIn" src="/heart.svg" alt="Heart" class="heart-icon" />
+      </div>
     </div>
 
-    <div class="offer-card">
+    <div class="offer-card relative">
       <img src="/Sport2.webp" alt="Intersport Offer" />
       <div class="offer-details" style="background-color: #4b0082">
         <p>10 % DE RÉDUCTION SUR L'ARTICLE DE TON CHOIX</p>
@@ -118,7 +120,7 @@ body {
       <img v-if="isLoggedIn" src="/heart.svg" alt="Heart" class="heart-icon" />
     </div>
 
-    <div class="offer-card">
+    <div class="offer-card relative">
       <img src="/Donuts.webp" alt="Cosy Offer" />
       <div class="offer-details" style="background-color: #00ced1">
         <p>UN DONUT OFFERT POUR UN MENU DAILY OU DÉLICH ACHETÉ</p>
@@ -129,7 +131,7 @@ body {
       <img v-if="isLoggedIn" src="/heart.svg" alt="Heart" class="heart-icon" />
     </div>
 
-    <div class="offer-card">
+    <div class="offer-card relative">
       <img src="/Mcdo.webp" alt="McDonald's Offer" />
       <div class="offer-details" style="background-color: #ffa500">
         <p>10 % DE RÉDUCTION SUR UNE COMMANDE AU DRIVE</p>
@@ -141,7 +143,7 @@ body {
       <img v-if="isLoggedIn" src="/heart.svg" alt="Heart" class="heart-icon" />
     </div>
 
-    <div class="offer-card">
+    <div class="offer-card relative">
       <img src="/Bk.webp" alt="Burger King Offer" />
       <div class="offer-details" style="background-color: #ff4500">
         <p>10 % DE RÉDUCTION SUR LA COMMANDE + 1 SANDWICH GRATUIT</p>
