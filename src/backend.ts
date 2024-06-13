@@ -22,8 +22,9 @@ export async function registerUser(
     })
     return user
   } catch (err) {
+    console.error('Failed to register:', err)
     if (err instanceof ClientResponseError) {
-      throw new Error(`Échec de l'inscription : ${err.data?.message || 'Veuillez réessayer.'}`)
+      throw new Error(`Échec de l'inscription : ${err.response?.message || 'Veuillez réessayer.'}`)
     } else {
       throw new Error("Échec de l'inscription, veuillez réessayer.")
     }
@@ -35,6 +36,7 @@ export async function loginUser(email: string, password: string) {
     const authData = await pb.collection('users').authWithPassword(email, password)
     return authData
   } catch (err) {
+    console.error('Failed to login:', err)
     if (err instanceof ClientResponseError) {
       throw new Error('Échec de la connexion, veuillez vérifier vos identifiants.')
     } else {
