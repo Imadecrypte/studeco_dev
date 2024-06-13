@@ -66,7 +66,7 @@ onMounted(() => {
 
       // Créer une icône personnalisée pour la position de l'utilisateur
       const userIcon = L.icon({
-        iconUrl: '/path/to/marker.svg', // Assurez-vous que le chemin est correct
+        iconUrl: '/marker.svg', // URL de l'icône
         iconSize: [25, 41], // Taille de l'icône
         iconAnchor: [12, 41], // Point de l'icône correspondant à la position du marqueur
         popupAnchor: [1, -34] // Point à partir duquel la popup doit s'ouvrir par rapport à l'iconAnchor
