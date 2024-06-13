@@ -5,7 +5,8 @@
       <span class="after-element"></span>
     </div>
     <p class="subtitle text-lg mb-5">
-      Ne ratez plus aucune opportunité, STUD’ECO vous ouvre la porte vers une vie étudiante plus sereine.<br />
+      Ne ratez plus aucune opportunité, STUD’ECO vous ouvre la porte vers une vie étudiante plus
+      sereine.<br />
       Les bons plans les plus proches de chez-vous !
     </p>
   </div>
@@ -26,11 +27,16 @@ let macarte: L.Map | null = null
 
 // Liste des villes et leurs coordonnées
 const villes = {
-  "<div class='marqueur'>UNE PARTIE DE BOWLING OFFERTE POUR UNE PARTIE ACHETÉE PAR LA MÊME PERSONNE<br>Bowling des 4 AS<br>Centre commercial des 4 As<br>90000 Belfort<br>03 84 54 04 47</div>": { lat: 47.637367, lon: 6.852622 },
-  "<div class='marqueur'>10 % DE RÉDUCTION SUR L'ARTICLE DE TON CHOIX<br>Intersport - Belfort<br>6 route de Montbéliard<br>90000 Andelnans<br>03 84 21 34 92</div>": { lat: 47.616128, lon: 6.852102 },
-  "<div class='marqueur'>UN DONUT OFFERT POUR UN MENU DAILY OU DÉLICH ACHETÉ<br>Cosy café et cie<br>Centre commercial des 4 AS<br>90000 Belfort</div>": { lat: 47.637367, lon: 6.852622 },
-  "<div class='marqueur'>10 % DE RÉDUCTION SUR UNE COMMANDE AU DRIVE<br>Mc Donald's Montbéliard<br>Zac du Pied des Gouttes<br>25200 Montbéliard<br>03 81 90 00 04</div>": { lat: 47.508391, lon: 6.800918 },
-  "<div class='marqueur'>10 % DE RÉDUCTION SUR LA COMMANDE + 1 SANDWICH GRATUIT<br>Burger King Exincourt<br>4 rue Philippe Goudey, C.C Happyt<br>25400 Exincourt<br>03 81 37 15 90</div>": { lat: 47.497324, lon: 6.818370 }
+  "<div class='marqueur'>UNE PARTIE DE BOWLING OFFERTE POUR UNE PARTIE ACHETÉE PAR LA MÊME PERSONNE<br>Bowling des 4 AS<br>Centre commercial des 4 As<br>90000 Belfort<br>03 84 54 04 47</div>":
+    { lat: 47.637367, lon: 6.852622 },
+  "<div class='marqueur'>10 % DE RÉDUCTION SUR L'ARTICLE DE TON CHOIX<br>Intersport - Belfort<br>6 route de Montbéliard<br>90000 Andelnans<br>03 84 21 34 92</div>":
+    { lat: 47.616128, lon: 6.852102 },
+  "<div class='marqueur'>UN DONUT OFFERT POUR UN MENU DAILY OU DÉLICH ACHETÉ<br>Cosy café et cie<br>Centre commercial des 4 AS<br>90000 Belfort</div>":
+    { lat: 47.637367, lon: 6.852622 },
+  "<div class='marqueur'>10 % DE RÉDUCTION SUR UNE COMMANDE AU DRIVE<br>Mc Donald's Montbéliard<br>Zac du Pied des Gouttes<br>25200 Montbéliard<br>03 81 90 00 04</div>":
+    { lat: 47.508391, lon: 6.800918 },
+  "<div class='marqueur'>10 % DE RÉDUCTION SUR LA COMMANDE + 1 SANDWICH GRATUIT<br>Burger King Exincourt<br>4 rue Philippe Goudey, C.C Happyt<br>25400 Exincourt<br>03 81 37 15 90</div>":
+    { lat: 47.497324, lon: 6.81837 }
 }
 
 onMounted(() => {
