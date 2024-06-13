@@ -13,7 +13,7 @@
       <button @click="spinWheel" :disabled="spinning" class="spin-button">Jouer</button>
       <div v-if="prizeMessage" class="prize-message">{{ prizeMessage }}</div>
     </div>
-    <div class="m-4">*pour tout gains, veuillez effectuer une capture d'écran à envoyer dans le formulaire de contact.</div>
+    <div class="m-4 text">*pour tout gains, veuillez effectuer une capture d'écran à envoyer dans le formulaire de contact.</div>
   </template>
   
   <script>
@@ -30,7 +30,7 @@
         if (this.spinning) return;
   
         this.spinning = true;
-        this.prizeMessage = ''; // Clear previous message
+        this.prizeMessage = ''; 
         const spinDegrees = Math.floor(Math.random() * 3600) + 360;
         this.rotation += spinDegrees;
   
@@ -62,6 +62,9 @@
   </script>
   
   <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
   .container-wheel {
     display: flex;
     flex-direction: column;
@@ -77,6 +80,7 @@
     text-align: center;
     margin-top: 15px;
     margin-bottom: 40px;
+    font-family: 'Alata', sans-serif;
   }
   
   .pointer {
@@ -157,6 +161,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-family: 'Alata', sans-serif;
   }
   
   .spin-button:disabled {
@@ -170,6 +175,12 @@
     color: #4caf50;
     font-weight: bold;
     text-align: center;
+    font-family: 'Alata', sans-serif;
   }
+
+  .text {
+    font-family: 'Alata', sans-serif;
+  }
+
   </style>
   
