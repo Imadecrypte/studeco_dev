@@ -1,11 +1,23 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useAuthStore } from '../stores/auth'
 import Menu from './Menu.vue'
 
 const isMenuOpen = ref(false)
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
+}
+
+const authStore = useAuthStore()
+const router = useRouter()
+
+const handleUserClick = () => {
+  if (authStore.isLoggedIn) {
+    router.push('/profil')
+  } else {
+    router.push('/login')
+  }
 }
 </script>
 
@@ -32,12 +44,11 @@ const toggleMenu = () => {
             class="w-[47px] h-[51px] absolute left-[9.5px] top-[6.5px] object-cover"
           />
         </router-link>
-        <router-link to="/login">
-          <img
-            src="/User.webp"
-            class="w-[30px] h-[30px] absolute left-[269.5px] top-[19.5px] object-contain"
-          />
-        </router-link>
+        <img
+          src="/User.webp"
+          class="w-[30px] h-[30px] absolute left-[269.5px] top-[19.5px] object-contain cursor-pointer"
+          @click="handleUserClick"
+        />
         <div @click="toggleMenu" class="absolute left-[320px] top-[20px] cursor-pointer">
           <div>
             <div class="w-[33px] h-[3.5px] rounded-[25px] bg-white my-1"></div>
