@@ -1,4 +1,5 @@
-<script setup lang="ts"></script>
+<script setup lang="ts" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2826188379143900"
+crossorigin="anonymous"></script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
