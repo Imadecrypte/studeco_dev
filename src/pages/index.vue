@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AdSenseScript from ''
+import AdSenseScript from '../components/AdSenseScript.vue'
 </script>
 
 <style>
